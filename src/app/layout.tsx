@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next"
 import "./globals.css";
 import ResponsiveNav from "../../components/Home/Navbar/ResponsiveNav";
 import Footer from "../../components/Home/Footer/Footer";
@@ -25,7 +26,8 @@ export default function RootLayout({
       >
         <ResponsiveNav />
         {children}
-        <Footer />
+        <Footer />  
+        <Analytics />
       </body>
     </html> 
   );

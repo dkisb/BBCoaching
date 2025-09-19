@@ -6,7 +6,7 @@ import Tilt from 'react-parallax-tilt';
 const Skills = () => {
   return (
     <div className='text-white pt-16 pb-16'>
-      <h1 className='text-center text-2xl md:text-4xl xl:text-5xl font-bold text-black'>My <span className='text-cyan-200'>Skills & Abilities</span></h1>
+      <h1 className='text-center text-2xl md:text-4xl xl:text-5xl font-bold text-black'>My <span className='text-[#0055ff]'>Skills & Abilities</span></h1>
       <div className='flex flex-wrap justify-center gap-6 mt-16'>
         {SkillsList.map((s, i) => (
          <Tilt key={s.id} scale={1.5} transitionSpeed={400}>

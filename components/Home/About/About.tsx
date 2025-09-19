@@ -19,7 +19,7 @@ const About = () => {
         </div>
         {/* text */}
         <div>
-          <h2 className='text-3xl sm:text-4xl lg:text-5xl font-bold'>About <span className='text-cyan-600'>BB Coaching</span></h2>
+          <h2 className='text-3xl sm:text-4xl lg:text-5xl font-bold'>About <span className='text-[#0055ff]'>BB Coaching</span></h2>
           <p className='mt-6 text-gray-600 text-base sm:text-lg'>
             I&#39;m Bertold, a professional motorsport performance analyst focused on developing drivers into future champions. I combine data-driven insights with real-world racing experience to help drivers unlock speed, build consistency, and gain a competitive edge.
           </p>

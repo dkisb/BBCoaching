@@ -11,6 +11,7 @@
   "dependencies": {
     "@react-email/render": "^1.2.3",
     "@types/react-scroll": "^1.8.10",
+    "@vercel/analytics": "^1.5.0",
     "aos": "3.0.0-beta.6",
     "dotenv": "^17.2.2",
     "next": "15.5.3",
