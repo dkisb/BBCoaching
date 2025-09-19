@@ -65,7 +65,7 @@ const Navbar = ({ openNav }: Props) => {
                     tabIndex={0}
                     role="button"
                 >
-                    <button className='px-8 py-3.5 text-sm cursor-pointer rounded-lg bg-blue-800 hover:bg-blue-900 transition-all duration-300 text-white flex items-center space-x-2'>
+                    <button className='px-8 py-3.5 text-sm cursor-pointer rounded-lg bg-[#0055ff] hover:bg-blue-900 transition-all duration-300 text-white flex items-center space-x-2'>
                         <PiPhone className='w-5 h-5' />
                         <span>Book a call</span>
                     </button>

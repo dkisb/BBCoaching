@@ -36,7 +36,7 @@ const About = () => {
               <p className='text-gray-600'>Analysis &amp; coaching</p>
             </div>
           </div>
-          <Link to="contact" smooth={true} duration={1000} offset={-100} className='inline-block mt-8 px-10 py-4 bg-blue-800 hover:bg-blue-900 transition-all duration-300 cursor-pointer rounded-full text-white'>
+          <Link to="contact" smooth={true} duration={1000} offset={-100} className='inline-block mt-8 px-10 py-4 bg-[#0055ff] hover:bg-blue-900 transition-all duration-300 cursor-pointer rounded-full text-white'>
             Get in touch
           </Link>
         </div>
