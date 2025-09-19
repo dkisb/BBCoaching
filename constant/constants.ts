@@ -4,7 +4,7 @@ import { FaChartLine, FaCar, FaBrain, FaGraduationCap, FaInstagram, FaFacebook, 
 export const NavLinks = [
     {
         id: 1,
-        url: "#",
+        url: "#home",
         lable: "Home"
     },
     {

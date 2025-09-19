@@ -26,7 +26,7 @@ const Home = () => {
   }, [])
 
   return (
-    <div className='overflow-hidden bg-gray-400'>
+    <div id='home' className='overflow-hidden bg-gray-400'>
       <Hero />
       <About />
       <Resume />
