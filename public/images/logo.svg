@@ -4,25 +4,26 @@
     <style>
       .cls-1 {
         font-family: DesignSystemDW01-900R, DesignSystemDW01-900R;
-        font-size: 515.5px;
+        font-size: 650px;
       }
 
       .cls-1, .cls-2 {
-        fill: #fff;
+        fill: #000;
+        text-anchor: middle;
       }
 
       .cls-2 {
         font-family: UnisonPro-BoldItalic, 'Unison Pro';
-        font-size: 75.08px;
+        font-size: 95px;
         font-style: italic;
         font-weight: 700;
       }
     </style>
   </defs>
   <g id="BB">
-    <text class="cls-1" transform="translate(399.28 1215.76) scale(.92) skewX(-22.6)"><tspan x="0" y="0">BB</tspan></text>
+    <text class="cls-1" transform="translate(1109 1215.76) scale(.92) skewX(-22.6)"><tspan x="0" y="0">BB</tspan></text>
   </g>
   <g id="Bertold_Bors_Coaching" data-name="Bertold Bors Coaching">
-    <text class="cls-2" transform="translate(328.92 1304.78) scale(.98) skewX(-10.1)"><tspan x="0" y="0">Bertold Bors Coaching</tspan></text>
+    <text class="cls-2" transform="translate(1109 1304.78) scale(.98) skewX(-10.1)"><tspan x="0" y="0">Bertold Bors Coaching</tspan></text>
   </g>
 </svg>

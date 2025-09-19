@@ -9,27 +9,27 @@ export const NavLinks = [
     },
     {
         id: 2,
-        url: "#",
+        url: "#about",
         lable: "About"
     },
     {
         id: 3,
-        url: "#",
+        url: "#services",
         lable: "Services"
     },
     {
         id: 4,
-        url: "#",
+        url: "#experiences",
         lable: "Experiences"
     },
     {
         id: 5,
-        url: "#",
+        url: "#testimonials",
         lable: "Testimonials"
     },
     {
         id: 6,
-        url: "#",
+        url: "#contact",
         lable: "Contact"
     },
 ]

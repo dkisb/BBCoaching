@@ -27,12 +27,12 @@ const Navbar = ({ openNav }: Props) => {
 
 
   return (
-    <div className={`transition-all ${navBg ? 'bg-grey shadow-md' : 'fixed'} duration-200 h-[12vh] z-[10000] fixed w-full`}>
+    <div className={`transition-all ${navBg ? 'bg-white/90 shadow-md' : 'bg-white backdrop-blur'} duration-200 h-[12vh] z-[10000] fixed w-full`}>
         <div className="flex items-center h-full justify-between w-90% mx-auto">
             <div className="flex items-center space-x-2">
                 {/* Logo */}
-                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center flex-col">
-                    <Image src="/images/logo.svg" alt="logo" width={200} height={200} className='bg-black'/>
+                <div className="w-25 h-25 flex items-center justify-center flex-col">
+                    <Image src="/images/logo.svg" alt="logo" width={200} height={200} className='w-full h-full object-contain'/>
                 </div>
                 <h1 className='text-xl hidden sm:block md:text-2xl font-bold text-black'>BB Coaching</h1>
             </div>
