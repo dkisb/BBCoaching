@@ -14,7 +14,6 @@ const Skills = () => {
                 <div className='text-5xl mb-4 text-[#0055ff]'>
                     <s.icon />
                 </div>
-                <p className='text-2xl font-semibold'>{s.percentage}%</p>
                 <p className='text-white'>{s.name}</p>
             </div>
          </Tilt>

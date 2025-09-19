@@ -67,43 +67,36 @@ export const SkillsList = [
         id: 1,
         name: "Performance Analysis",
         icon: FaChartLine,
-        percentage: 90
     },
     {
         id: 2,
         name: "Technical Analysis",
         icon: FaChartLine,
-        percentage: 80
     },
     {
         id: 3,
         name: "Vehicle Setup",
         icon: FaCar,
-        percentage: 70
     },
     {
         id: 4,
         name: "Mental Training",
         icon:FaBrain,
-        percentage: 60
     },
     {
         id: 5,
         name: "Data Analysis",
         icon:FaChartLine,
-        percentage: 50
     },
     {
         id: 6,
         name: "Driver Development",
         icon:FaGraduationCap,
-        percentage: 40
     },
     {
         id: 7,
         name: "Car Development",
         icon:FaCar,
-        percentage: 30
     },
 ]
 
@@ -149,25 +142,25 @@ export const ContactList = [
     {
         id: 1,
         name: "instagram",
-        url: "https://www.instagram.com/bertold.bb/",
+        url: "https://www.instagram.com/borsberti/",
         icon: FaInstagram,
     },
     {
         id: 2,
         name: "facebook",
-        url: "https://www.facebook.com/bertold.bb/",
+        url: "https://www.facebook.com/robinagyker/",
         icon: FaFacebook,
     },
     {
         id: 3,
         name: "tiktok",
-        url: "https://www.x.com/bertold.bb/",
+        url: "https://www.tiktok.com/robinagyker/",
         icon: FaTiktok,
     },
     {
         id: 4,
         name: "linkedin",
-        url: "https://www.linkedin.com/bertold.bb/",
+        url: "https://www.linkedin.com/in/döme-marcell-kisbalázs",
         icon: FaLinkedin,
     }
 ]

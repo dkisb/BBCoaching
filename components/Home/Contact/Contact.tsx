@@ -78,12 +78,15 @@ const Contact = () => {
                     {/* social media */}
                     <div className='flex items-center mt-8 space-x-3'>
                         {ContactList.map((item) => (
-                            <div
+                            <a
                                 key={item.id}
+                                href={item.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className='w-14 h-14 bg-[#0055ff] rounded-full flex items-center justify-center cursor-pointer hover:bg-blue-800 transition-all duration-300'
                             >
                                 <item.icon className='w-6 h-6 text-white' />
-                            </div>
+                            </a>
                         ))}
                     </div>
                 </div>

@@ -28,12 +28,12 @@ const About = () => {
           </p>
           <div className='mt-8 grid grid-cols-2 gap-4'>
             <div className='bg-[#14134120] rounded-2xl p-5'>
-              <p className='text-xl font-semibold'>10+ Years</p>
-              <p className='text-gray-600'>In motorsport</p>
+              <p className='text-xl font-semibold'>Over a decade</p>
+              <p className='text-gray-600'>In motorsports</p>
             </div>
             <div className='bg-[#14134120] rounded-2xl p-5'>
               <p className='text-xl font-semibold'>Data-Driven</p>
-              <p className='text-gray-600'>Analysis &amp; coaching</p>
+              <p className='text-gray-600'>Analysis &amp; Coaching</p>
             </div>
           </div>
           <Link to="contact" smooth={true} duration={1000} offset={-100} className='inline-block mt-8 px-10 py-4 bg-[#0055ff] hover:bg-blue-900 transition-all duration-300 cursor-pointer rounded-full text-white'>
