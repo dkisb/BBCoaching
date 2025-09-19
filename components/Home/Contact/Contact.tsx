@@ -42,8 +42,9 @@ const Contact = () => {
       setEmail('')
       setPhone('')
       setMessage('')
-    } catch (err: any) {
-      setError(err.message || 'Failed to send message')
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : 'Failed to send message'
+      setError(message)
     } finally {
       setLoading(false)
     }

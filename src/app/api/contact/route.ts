@@ -38,7 +38,7 @@ export async function POST(req: Request) {
     const { error } = await resend.emails.send({
       from: fromEmail,
       to: [toEmail],
-      reply_to: email,
+      replyTo: email,
       subject,
       html,
     })
@@ -48,7 +48,7 @@ export async function POST(req: Request) {
     }
 
     return NextResponse.json({ ok: true })
-  } catch (err) {
+  } catch {
     return NextResponse.json({ error: 'Invalid request' }, { status: 400 })
   }
 }
