@@ -1,9 +1,55 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import { BiEnvelope, BiMap, BiPhone } from 'react-icons/bi'
 import { ContactList } from '../../../constant/constants'
 
 const Contact = () => {
+
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [phone, setPhone] = useState('')
+  const [message, setMessage] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const [success, setSuccess] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError(null)
+    setSuccess(false)
+
+    if (!name || !email || !message) {
+      setError('Please fill in your name, email and message.')
+      return
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setError('Please enter a valid email address.')
+      return
+    }
+
+    setLoading(true)
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, phone, message }),
+      })
+      const data = await res.json()
+      if (!res.ok) throw new Error(data?.error || 'Failed to send message')
+      setSuccess(true)
+      setName('')
+      setEmail('')
+      setPhone('')
+      setMessage('')
+    } catch (err: any) {
+      setError(err.message || 'Failed to send message')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+
   return (
     <div id='contact' className='pt-16 pb-16'>
         <div className='w-[90%] md:w-[80%] lg:w-[70%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10'>
@@ -43,15 +89,17 @@ const Contact = () => {
             </div>
             {/* forM */}
             <div data-aos="zoom-in" data-aos-anchor-placement="top-center" className='md:p-10 p-5 bg-[#131332] rounded-lg'>
-                <form action="submit">
-                <input type="text" placeholder='Name' className='px-4 py-3.5 bg-[#363659] text-white outline-none rounded-md w-full placeholder:text-white/70'/>
-                <input type="email" placeholder='Email' suppressHydrationWarning className='px-4 py-3.5 mt-6 bg-[#363659] text-white outline-none rounded-md w-full placeholder:text-white/70'/>
-                <input type="text" placeholder='Mobile Number' className='px-4 py-3.5 mt-6 bg-[#363659] text-white outline-none rounded-md w-full placeholder:text-white/70'/>
-                <textarea name="message" id="message" placeholder='Message' className='px-4 py-3.5 mt-6 bg-[#363659] text-white outline-none rounded-md w-full placeholder:text-white/70 h-[10rem]'>
+                <form onSubmit={handleSubmit}>
+                <input value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder='Name' className='px-4 py-3.5 bg-[#363659] text-white outline-none rounded-md w-full placeholder:text-white/70'/>
+                <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder='Email' suppressHydrationWarning className='px-4 py-3.5 mt-6 bg-[#363659] text-white outline-none rounded-md w-full placeholder:text-white/70'/>
+                <input value={phone} onChange={(e) => setPhone(e.target.value)} type="text" placeholder='Mobile Number' className='px-4 py-3.5 mt-6 bg-[#363659] text-white outline-none rounded-md w-full placeholder:text-white/70'/>
+                <textarea value={message} onChange={(e) => setMessage(e.target.value)} name="message" id="message" placeholder='Message' className='px-4 py-3.5 mt-6 bg-[#363659] text-white outline-none rounded-md w-full placeholder:text-white/70 h-[10rem]'>
                 </textarea>
-                <button type='submit' className='mt-8 px-12 py-4 bg-blue-950 hover:bg-blue-900 transition-all duration-300 cursor-pointer rounded-full text-white'>
-                    <span className='text-white'>Send</span>
+                <button type='submit' disabled={loading} className='mt-8 px-12 py-4 bg-blue-950 hover:bg-blue-900 disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-300 cursor-pointer rounded-full text-white'>
+                    <span className='text-white'>{loading ? 'Sending…' : 'Send'}</span>
                 </button>
+                {error && <p className='text-red-400 mt-4'>{error}</p>}
+                {success && <p className='text-green-400 mt-4'>Thanks! Your message has been sent.</p>}
                  </form>
             </div>
         </div>
