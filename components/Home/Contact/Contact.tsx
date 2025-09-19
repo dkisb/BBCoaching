@@ -13,7 +13,7 @@ const Contact = () => {
                     Schedule a call with me to get started
                 </h1>
                 <p className='text-gray-400 mt-6 text-base sm:text-lg'>
-                    I'm always looking for new opportunities to work with drivers and teams. If you have any questions or want to work with me, don't hesitate to contact me.
+                    I&#39;m always looking for new opportunities to work with drivers and teams. If you have any questions or want to work with me, don&#39;t hesitate to contact me.
                 </p>
                 <div className='mt-7'>
                     <div className='flex items-center space-x-3 mb-4'>

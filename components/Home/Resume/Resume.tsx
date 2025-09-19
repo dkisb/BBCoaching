@@ -1,6 +1,6 @@
 import React from 'react'
 import ResumeCard from './ResumeCard'
-import { FaCar, FaGraduationCap, FaTrophy } from 'react-icons/fa'
+import { FaCar, FaTrophy } from 'react-icons/fa'
 
 const Resume = () => {
   return (

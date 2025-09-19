@@ -12,7 +12,7 @@ const Hero = () => {
                 <span className='text-black '>of the future</span>
             </h1>
             <h2 data-aos="fade-up" data-aos-delay="400" className='mt-5 text-sm px-2 text-center sm: text-2xl font-medium flex items-center'>
-                Hi! I'm Bertold - Professional Motorsport Performance Analyst
+                Hi! I&#39;m Bertold - Professional Motorsport Performance Analyst
             </h2>
             <button data-aos="fade-up" data-aos-delay="600" className='mt-6 px-10 py-4 bg-blue-800 hover:bg-blue-900 transition-all duration-300
             cursor-pointer rounded-full text-lg font-medium'>
