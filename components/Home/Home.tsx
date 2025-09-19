@@ -7,7 +7,8 @@ import Experiences from './Experiences/Experiences'
 import Skills from './Skills/Skills'
 import Testimonials from './Testimonials/Testimonials'
 import Contact from './Contact/Contact'
-import AOS from 'aos'
+import About from './About/About'
+import AOS from 'aos' 
 import 'aos/dist/aos.css'
 
 const Home = () => {
@@ -27,9 +28,10 @@ const Home = () => {
   return (
     <div className='overflow-hidden bg-gray-400'>
       <Hero />
-      <Services />
+      <About />
       <Resume />
       <Experiences />
+      <Services />
       <Skills />
       <Testimonials />
       <Contact />

@@ -12,7 +12,7 @@ type Props = {
 const TestimonialCard = ({ image, name, role, description }: Props) => {
   return (
     <div className='m-2'>
-        <Image src={image} alt={name} width={60} height={60} className='rounded-full' />
+        <Image src={image} alt={name} width={60} height={60} className='rounded-full' style={{ height: 'auto' }} />
         <p className='mt-6 text-base text-gray-200 font-medium break-words overflow-hidden text-ellipsis max-h-32 line-clamp-5'>
             &quot;{description}&quot;
         </p>

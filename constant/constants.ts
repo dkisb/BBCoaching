@@ -14,13 +14,13 @@ export const NavLinks = [
     },
     {
         id: 3,
-        url: "#services",
-        lable: "Services"
+        url: "#experiences",
+        lable: "Experiences"
     },
     {
         id: 4,
-        url: "#experiences",
-        lable: "Experiences"
+        url: "#services",
+        lable: "Services"
     },
     {
         id: 5,
@@ -110,35 +110,35 @@ export const SkillsList = [
 export const TestimonialsList = [
     {
         id: 1,
-        image: "/images/hero.jpg",
+        image: "/images/hero2.jpg",
         name: "John Doe",
         role: "Driver",
         description: "I had a great experience working with Bertold. He is a very professional and knowledgeable driver."
     },
     {
         id: 2,
-        image: "/images/hero.jpg",
+        image: "/images/hero2.jpg",
         name: "John Doe",
         role: "Driver",
         description: "I had a great experience working with Bertold. He is a very professional and knowledgeable driver."
     },
     {
         id: 3,
-        image: "/images/hero.jpg",
+        image: "/images/hero2.jpg",
         name: "John Doe",
         role: "Driver",
         description: "I had a great experience working with Bertold. He is a very professional and knowledgeable driver."
     },
     {
         id: 4,
-        image: "/images/hero.jpg",
+        image: "/images/hero2.jpg",
         name: "John Doe",
         role: "Driver",
         description: "I had a great experience working with Bertold. He is a very professional and knowledgeable driver."
     },
     {
         id: 5,
-        image: "/images/hero.jpg",
+        image: "/images/hero2.jpg",
         name: "John Doe",
         role: "Driver",
         description: "I had a great experience working with Bertold. He is a very professional and knowledgeable driver."

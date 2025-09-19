@@ -4,7 +4,7 @@ import { ExperiencesList } from '../../../constant/constants'
 
 const Experiences = () => {
   return (
-    <div className='pt-16 pb-16'>
+    <div id='experiences' className='pt-16 pb-16'>
 <h1 className='text-center text-2xl md:text-4xl xl:text-5xl font-bold text-white'>
             A small section of recents <br /> {" "}
             <span className='text-cyan-300'>work experiences</span>
