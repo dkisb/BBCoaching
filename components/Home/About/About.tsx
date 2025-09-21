@@ -21,10 +21,10 @@ const About = () => {
         <div>
           <h2 className='text-3xl sm:text-4xl lg:text-5xl font-bold'>About <span className='text-[#0055ff]'>BB Coaching</span></h2>
           <p className='mt-6 text-gray-600 text-base sm:text-lg'>
-            I&#39;m Bertold, a professional motorsport performance analyst focused on developing drivers into future champions. I combine data-driven insights with real-world racing experience to help drivers unlock speed, build consistency, and gain a competitive edge.
+            I&apos;m Bertold, a motorsport performance analyst and driver development coach passionate about helping racing drivers reach their full potential. By combining telemetry analysis, race data insights, and real-world racing experience, I provide structured coaching that improves lap times, race craft, and driver consistency.
           </p>
           <p className='mt-4 text-gray-600 text-base sm:text-lg'>
-            From telemetry deep dives and vehicle setup guidance to race craft and mental performance, my approach is holistic and tailored to each driver&#39;s goals. Whether you&#39;re aiming for podiums or building a foundation in junior categories, I bring the tools and structure to move you forward.
+            My focus is driver development at every level of motorsport—from building strong foundations in junior categories to coaching experienced racers chasing wins. With a holistic approach that covers vehicle setup, data-driven performance reviews, and mental preparation, I give drivers the competitive edge they need to succeed.
           </p>
           <div className='mt-8 grid grid-cols-2 gap-4'>
             <div className='bg-[#14134120] rounded-2xl p-5'>

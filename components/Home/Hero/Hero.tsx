@@ -13,7 +13,7 @@ const Hero = () => {
                 <span className='text-[#0055ff]'>of the future</span>
             </h1>
             <h2 data-aos="fade-up" data-aos-delay="400" className='mt-5 text-sm px-2 text-center sm: text-2xl font-medium flex items-center'>
-                Hi! I&#39;m Bertold - Professional Motorsport Performance Analyst
+                Hi! I&#39;m Bertold - The Founder of BB Coaching
             </h2>
             <Link to="about" smooth={true} duration={1000} offset={-100} data-aos="fade-up" data-aos-delay="600" className='mt-6 px-10 py-4 bg-[#0055ff] hover:bg-blue-900 transition-all duration-300
             cursor-pointer rounded-full text-lg font-medium'>

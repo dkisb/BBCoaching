@@ -31,10 +31,9 @@ const Navbar = ({ openNav }: Props) => {
         <div className="flex items-center h-full justify-between w-90% mx-auto">
             <div className="flex items-center space-x-2">
                 {/* Logo */}
-                <div className="w-25 h-25 flex items-center justify-center flex-col">
-                    <Image src="/images/logoDark.png" alt="logo" width={300} height={300}/>
+                <div className="w-45 h-45 flex items-center justify-center flex-col">
+                    <Image src="/images/logoDark.png" alt="logo" width={500} height={500}/>
                 </div>
-                <h1 className='text-xl hidden sm:block md:text-2xl font-bold text-black'>BB Coaching</h1>
             </div>
             {/* Desktop Nav */}
             <div className="hidden lg:flex items-center space-x-10">

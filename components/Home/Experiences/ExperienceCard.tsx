@@ -4,7 +4,7 @@ import Image from 'next/image'
 type Props = {
     image: string;
     title: string;
-    company: string;
+    company?: string;
 }
 
 const ExperienceCard = ({ image, title, company }: Props) => {

@@ -168,22 +168,20 @@ export const ContactList = [
 export const ExperiencesList = [
     {
         id: 1,
-        image: "/images/stock.jpg",
-        title: "RallyCross Hungarian Cup Champion",
-        company: "Swift Sport Car Club",
+        image: "/images/world-champs.jpg",
+        title: "Hungarian National Karting Champion",
     },
     {
         id: 2,
-        image: "/images/stock.jpg",
-        title: "RallyCross Hungarian Cup Champion",
-        company: "Swift Sport Car Club",
+        image: "/images/martinka2.jpeg",
+        title: "CEE Karting European Championship 3rd place",
+        company: "KSB Racing Team",
     },
     
     {
         id: 3,
-        image: "/images/stock.jpg",
-        title: "RallyCross Hungarian Cup Champion",
-        company: "Swift Sport Car Club",
+        image: "/images/markusz.jpeg",
+        title: "Several championships both as a coach and mechanic with BDP",
     },
     
     {
