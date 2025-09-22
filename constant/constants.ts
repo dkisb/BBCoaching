@@ -103,17 +103,19 @@ export const SkillsList = [
 export const TestimonialsList = [
     {
         id: 1,
-        image: "/images/hero2.jpg",
-        name: "John Doe",
+        image: "/images/martin-head.jpeg",
+        name: "Martin Ernesto Varga",
         role: "Driver",
-        description: "I had a great experience working with Bertold. He is a very professional and knowledgeable driver."
+        description: "We had a great experience together with Berti. He immediately knew what to fix by just standing outside the track. I told him how I felt after the sessions, and we made some setup changes. After the first two sessions, I was the fastest on the track, and we finished the day feeling confident."
     },
     {
         id: 2,
-        image: "/images/hero2.jpg",
-        name: "John Doe",
+        image: "/images/szoke-m.jpeg",
+        name: "Martin Szőke",
         role: "Driver",
-        description: "I had a great experience working with Bertold. He is a very professional and knowledgeable driver."
+        description: `Thanks to his racing background, he knows the challenges of kart racing.
+He easily finds common ground with everyone
+His enthusiasm, up-to-date knowledge, and supportive attitude make it motivating to work with him, bringing real progress to every training session and race!`
     },
     {
         id: 3,

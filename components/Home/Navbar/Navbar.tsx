@@ -31,8 +31,15 @@ const Navbar = ({ openNav }: Props) => {
         <div className="flex items-center h-full justify-between w-90% mx-auto">
             <div className="flex items-center space-x-2">
                 {/* Logo */}
-                <div className="w-45 h-45 flex items-center justify-center flex-col">
-                    <Image src="/images/logoDark.png" alt="logo" width={500} height={500}/>
+                <div className="flex items-center justify-center flex-col w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 lg:w-45 lg:h-45">
+                    <Image
+                        src="/images/logoDark.png"
+                        alt="logo"
+                        width={180}
+                        height={180}
+                        className="w-full h-full object-contain"
+                        priority
+                    />
                 </div>
             </div>
             {/* Desktop Nav */}
@@ -64,9 +71,17 @@ const Navbar = ({ openNav }: Props) => {
                     tabIndex={0}
                     role="button"
                 >
-                    <button className='px-8 py-3.5 text-sm cursor-pointer rounded-lg bg-[#0055ff] hover:bg-blue-900 transition-all duration-300 text-white flex items-center space-x-2'>
-                        <PiPhone className='w-5 h-5' />
-                        <span>Book a call</span>
+                    <button
+                        className="
+                            px-8 py-3.5 text-sm cursor-pointer rounded-lg bg-[#0055ff] hover:bg-blue-900 transition-all duration-300 text-white flex items-center space-x-2
+                            sm:px-8 sm:py-3.5
+                            px-4 py-2
+                            text-xs
+                            sm:text-sm
+                        "
+                    >
+                        <PiPhone className="w-5 h-5 sm:w-5 sm:h-5 w-4 h-4" />
+                        <span className="whitespace-nowrap">Book a call</span>
                     </button>
                 </ScrollLink>
                 { /* Burger Menu */}
