@@ -39,23 +39,20 @@ export const ServicesList = [
     {
         id: 1,
         name: "Performance Analysis",
+        description: "I work with you to break down your driving, using data, video, and feedback to spot where you can improve. The goal is simple: help you find those extra tenths, gain consistency, and feel more confident on track.",
         icon: FaChartLine,
     },
-    {
-        id: 2,
-        name: "Technical Analysis",
-        icon: FaChartLine,
-    },
-    
     {
         id: 3,
         name: "Vehicle Setup",
+        description: "Getting the car right for you makes all the difference. I’ll help you adjust everything from suspension to tire pressures so the car matches your driving style and the conditions you are racing in.",
         icon: FaCar,
     },
     
     {
         id: 4,
         name: "Mental Training",
+        description: "Racing isn’t just physical — it’s mental too. I’ll share tools and techniques that have helped me (and other drivers) stay focused, manage pressure, and keep a clear head when it matters most.",
         icon:FaBrain,
     },
     
@@ -114,15 +111,15 @@ export const TestimonialsList = [
         name: "Martin Szőke",
         role: "Driver",
         description: `Thanks to his racing background, he knows the challenges of kart racing.
-He easily finds common ground with everyone
-His enthusiasm, up-to-date knowledge, and supportive attitude make it motivating to work with him, bringing real progress to every training session and race!`
+        He easily finds common ground with everyone
+        His enthusiasm, up-to-date knowledge, and supportive attitude make it motivating to work with him, bringing real progress to every training session and race!`
     },
     {
         id: 3,
-        image: "/images/hero2.jpg",
-        name: "John Doe",
+        image: "/images/kika.jpeg",
+        name: "Kristýna Kalistová",
         role: "Driver",
-        description: "I had a great experience working with Bertold. He is a very professional and knowledgeable driver."
+        description: "Berti is really great friend and even better coach. At every experience with him I had lots of fun and also learned a lot. He knows a lot from driving to setting up the kart, he always pushed to find a better way and tried to give me a competitive edge compared to others everytime"
     },
     {
         id: 4,

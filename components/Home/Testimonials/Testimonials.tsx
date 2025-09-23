@@ -1,7 +1,7 @@
 'use client'
 import TestimonialCard from './TestimonialCard'
 import { TestimonialsList } from '../../../constant/constants';
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Carousel from 'react-multi-carousel';
 import "react-multi-carousel/lib/styles.css";
 
@@ -24,6 +24,20 @@ const responsive = {
 };
 
 const Testimonials = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check if window is defined (to avoid SSR issues)
+    const checkMobile = () => {
+      if (typeof window !== 'undefined') {
+        setIsMobile(window.innerWidth < 764);
+      }
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <div id='testimonials' className='pt-16 pb-16'>
         <h1 className='text-center text-2xl md:text-4xl xl:text-5xl font-bold text-white'>Kind words from previous <span className='text-[#0055ff]'>clients</span></h1>
@@ -32,7 +46,7 @@ const Testimonials = () => {
             showDots={false}
             responsive={responsive}
             infinite={true}
-            autoPlay={true}
+            autoPlay={!isMobile}
             autoPlaySpeed={2000}
             >
             {TestimonialsList.map((testimonial) => (
