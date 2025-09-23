@@ -109,7 +109,7 @@ const Gallery = () => {
     };
   }, [expandedIndex]);
 
-  const handlePrev = (e: React.MouseEvent) => {
+  const handlePrev = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     setExpandedIndex(prev =>
       prev !== null
@@ -118,7 +118,7 @@ const Gallery = () => {
     );
   };
 
-  const handleNext = (e: React.MouseEvent) => {
+  const handleNext = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     setExpandedIndex(prev =>
       prev !== null
@@ -180,7 +180,7 @@ const Gallery = () => {
         >
           <div
             className="relative"
-            onClick={e => e.stopPropagation()}
+            onClick={(e: React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
