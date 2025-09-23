@@ -1,4 +1,5 @@
-import { FaChartLine, FaCar, FaBrain, FaGraduationCap, FaInstagram, FaFacebook, FaTiktok, FaLinkedin } from "react-icons/fa"
+import { FaChartLine, FaCar, FaBrain, FaGraduationCap, FaInstagram, FaFacebook, FaTiktok, FaLinkedin, FaVideo, FaTv } from "react-icons/fa"
+import { LuChartNoAxesCombined } from "react-icons/lu"
 
 
 export const NavLinks = [
@@ -32,6 +33,11 @@ export const NavLinks = [
         url: "#contact",
         lable: "Contact"
     },
+    {
+        id: 7,
+        url: "#gallery",
+        lable: "Gallery"
+    },
 ]
 
 
@@ -63,37 +69,22 @@ export const SkillsList = [
     {
         id: 1,
         name: "Performance Analysis",
-        icon: FaChartLine,
+        icon: LuChartNoAxesCombined,
     },
     {
         id: 2,
-        name: "Technical Analysis",
-        icon: FaChartLine,
-    },
-    {
-        id: 3,
         name: "Vehicle Setup",
         icon: FaCar,
     },
     {
+        id: 3,
+        name: "Data and Video Analysis",
+        icon: FaTv,
+    },
+    {
         id: 4,
-        name: "Mental Training",
-        icon:FaBrain,
-    },
-    {
-        id: 5,
-        name: "Data Analysis",
-        icon:FaChartLine,
-    },
-    {
-        id: 6,
         name: "Driver Development",
-        icon:FaGraduationCap,
-    },
-    {
-        id: 7,
-        name: "Car Development",
-        icon:FaCar,
+        icon: FaGraduationCap,
     },
 ]
 
@@ -124,9 +115,9 @@ export const TestimonialsList = [
     {
         id: 4,
         image: "/images/hero2.jpg",
-        name: "John Doe",
-        role: "Driver",
-        description: "I had a great experience working with Bertold. He is a very professional and knowledgeable driver."
+        name: "Döme Kisbalázs",
+        role: "SimRacer",
+        description: "After picking up SimRacing as a hobby, I wanted to improve my skills to compete in the top packs in all games. Bertold helped me with my driving style and car setup, and I was able to improve my skills to compete and win in several races amongs very skilled drivers."
     },
     {
         id: 5,
@@ -185,8 +176,38 @@ export const ExperiencesList = [
     
     {
         id: 4,
-        image: "/images/stock.jpg",
-        title: "RallyCross Hungarian Cup Champion",
-        company: "Swift Sport Car Club",
+        image: "/images/rx2.jpg",
+        title: "Winning my Debut race in the Hungarian RallyCross Championship",
     },
+]
+
+export const GalleryList = [
+    {
+        id: 1,
+        image: "/images/kika.jpg",
+    },
+    {
+        id: 2,
+        image: "/images/martinka2.jpeg",
+    },
+    {
+        id: 3,
+        image: "/images/markusz.jpeg",
+    },
+    {
+        id: 4,
+        image: "/images/rx2.jpg",
+    },
+    {
+        id: 5,
+        image: "/images/world-champs.jpg",
+    },
+    {
+        id: 6,
+        image: "/images/szoke-m.jpeg",
+    },
+    {
+        id: 7,
+        image: "/images/martin-head.jpeg",
+    }
 ]

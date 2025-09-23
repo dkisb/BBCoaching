@@ -9,7 +9,8 @@ const Resume = () => {
             <div>
                 <h1 className='text-3xl font-bold sm:text-4xl text-white'>My Work <span className='text-[#0055ff]'>Experience</span></h1>
                 <div className='mt-10' data-aos="zoom-in" data-aos-anchor-placement="top-center" data-aos-delay="100">
-                    <ResumeCard Icon={"/images/tms-logo.png"} role={"Motorsport Performance Analyst"} company={"Top Motorsport Karting Team"} duration={"2021 - Present"} />
+                    <ResumeCard Icon={"/images/tms-logo.png"} role={"Performance Analyst"} company={"Top Motorsport Karting Team"} duration={"2021 - Present"} />
+                    <ResumeCard Icon={"/images/bdp-logo.jpg"} role={"Driver Coach & Mechanic"} company={"Brilliant Driver Program"} duration={"2022 - 2024"} />
                     <ResumeCard 
                         Icon={"/images/logoDark.png"} 
                         role={"1 on 1 Driver Coaching"} 

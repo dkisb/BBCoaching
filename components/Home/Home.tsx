@@ -10,6 +10,7 @@ import Contact from './Contact/Contact'
 import About from './About/About'
 import AOS from 'aos' 
 import 'aos/dist/aos.css'
+import Gallery from './Gallery/Gallery'
 
 const Home = () => {
 
@@ -31,9 +32,10 @@ const Home = () => {
       <About />
       <Resume />
       <Experiences />
-      <Services />
       <Skills />
+      <Services />
       <Testimonials />
+      <Gallery />
       <Contact />
     </div>
   )
