@@ -25,7 +25,7 @@ const responsive = {
 type CarouselArrowProps = {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   carouselState?: { expanded?: boolean };
-  [key: string]: any;
+  // No index signature; rely on explicit props only for type safety.
 };
 
 // Custom arrow components for Carousel
