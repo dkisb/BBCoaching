@@ -22,8 +22,14 @@ const responsive = {
   }
 };
 
+type CarouselArrowProps = {
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  carouselState?: { expanded?: boolean };
+  [key: string]: any;
+};
+
 // Custom arrow components for Carousel
-const CustomLeftArrow = ({ onClick, ...rest }: any) => (
+const CustomLeftArrow = ({ onClick, ...rest }: CarouselArrowProps) => (
   <button
     aria-label="Previous"
     className="react-multi-carousel-arrow react-multi-carousel-arrow--left"
@@ -49,7 +55,7 @@ const CustomLeftArrow = ({ onClick, ...rest }: any) => (
   </button>
 );
 
-const CustomRightArrow = ({ onClick, ...rest }: any) => (
+const CustomRightArrow = ({ onClick, ...rest }: CarouselArrowProps) => (
   <button
     aria-label="Next"
     className="react-multi-carousel-arrow react-multi-carousel-arrow--right"
