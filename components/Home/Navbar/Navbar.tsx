@@ -1,10 +1,11 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
-import { NavLinks } from '../../../constant/constants';
 import { Link as ScrollLink } from 'react-scroll';
 import { PiPhone } from 'react-icons/pi';
 import { HiBars3BottomRight } from 'react-icons/hi2';
+import { useTranslations } from 'next-intl';
+import LanguageSwitcher from '../../LanguageSwitcher/LanguageSwitcher';
 
 type Props = {
     openNav: () => void;
@@ -12,8 +13,18 @@ type Props = {
 
 
 const Navbar = ({ openNav }: Props) => {
-
+    const t = useTranslations('nav');
     const [navBg, setNavBg] = useState(false);
+
+    const navLinks = [
+        { id: 1, url: "#home", label: t('home') },
+        { id: 2, url: "#about", label: t('about') },
+        { id: 3, url: "#experiences", label: t('experiences') },
+        { id: 4, url: "#services", label: t('services') },
+        { id: 5, url: "#testimonials", label: t('testimonials') },
+        { id: 6, url: "#gallery", label: t('gallery') },
+        { id: 7, url: "#contact", label: t('contact') },
+    ];
 
     useEffect(() => {
         const handleResize = () => {
@@ -44,7 +55,7 @@ const Navbar = ({ openNav }: Props) => {
             </div>
             {/* Desktop Nav */}
             <div className="hidden lg:flex items-center space-x-10">
-                {NavLinks.map((link) => (
+                {navLinks.map((link) => (
                     <ScrollLink
                         to={link.url.replace('#', '')}
                         smooth={true}
@@ -56,12 +67,13 @@ const Navbar = ({ openNav }: Props) => {
                         tabIndex={0}
                         role="button"
                     >
-                        {link.lable}
+                        {link.label}
                     </ScrollLink>
                 ))}  
             </div>
             {/*Buttons*/}
             <div className="flex items-center space-x-4">
+                <LanguageSwitcher />
                 <ScrollLink
                     to="contact"
                     smooth={true}
@@ -81,7 +93,7 @@ const Navbar = ({ openNav }: Props) => {
                         "
                     >
                         <PiPhone className="w-5 h-5 sm:w-5 sm:h-5 w-4 h-4" />
-                        <span className="whitespace-nowrap">Book a call</span>
+                        <span className="whitespace-nowrap">{t('bookCall')}</span>
                     </button>
                 </ScrollLink>
                 { /* Burger Menu */}

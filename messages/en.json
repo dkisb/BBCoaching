@@ -1,0 +1,161 @@
+{
+  "metadata": {
+    "title": "BB Coaching Professional Motorsport Coaching",
+    "description": "BB Coaching Professional Motorsport Coaching by Bertold Bors"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "experiences": "Experiences",
+    "services": "Services",
+    "testimonials": "Testimonials",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "bookCall": "Book a call"
+  },
+  "hero": {
+    "title": "Developing Champions",
+    "titleHighlight": "of the future",
+    "subtitle": "Hi! I'm Bertold - The Founder of BB Coaching",
+    "readMore": "Read More"
+  },
+  "about": {
+    "title": "About",
+    "titleHighlight": "BB Coaching",
+    "paragraph1": "I'm Bertold, a motorsport performance analyst and driver development coach passionate about helping racing drivers reach their full potential. By combining telemetry analysis, race data insights, and real-world racing experience, I provide structured coaching that improves lap times, race craft, and driver consistency.",
+    "paragraph2": "My focus is driver development at every level of motorsport—from building strong foundations in junior categories to coaching experienced racers chasing wins. With a holistic approach that covers vehicle setup, data-driven performance reviews, and mental preparation, I give drivers the competitive edge they need to succeed.",
+    "stat1Title": "Over a decade",
+    "stat1Description": "In motorsports",
+    "stat2Title": "Data-Driven",
+    "stat2Description": "Analysis & Coaching",
+    "getInTouch": "Get in touch"
+  },
+  "services": {
+    "title": "Helping drivers",
+    "titleHighlight": "achieve their full potential",
+    "performanceAnalysis": {
+      "name": "Performance Analysis",
+      "description": "I work with you to break down your driving, using data, video, and feedback to spot where you can improve. The goal is simple: help you find those extra tenths, gain consistency, and feel more confident on track."
+    },
+    "vehicleSetup": {
+      "name": "Vehicle Setup",
+      "description": "Getting the car right for you makes all the difference. I'll help you adjust everything from suspension to tire pressures so the car matches your driving style and the conditions you are racing in."
+    },
+    "mentalTraining": {
+      "name": "Mental Training",
+      "description": "Racing isn't just physical — it's mental too. I'll share tools and techniques that have helped me (and other drivers) stay focused, manage pressure, and keep a clear head when it matters most."
+    }
+  },
+  "skills": {
+    "title": "My",
+    "titleHighlight": "Skills & Abilities",
+    "performanceAnalysis": "Performance Analysis",
+    "vehicleSetup": "Vehicle Setup",
+    "dataVideoAnalysis": "Data and Video Analysis",
+    "driverDevelopment": "Driver Development"
+  },
+  "resume": {
+    "workExperience": "My Work",
+    "workExperienceHighlight": "Experience",
+    "achievementsTitle": "My",
+    "achievementsHighlight": "Achievements",
+    "jobs": {
+      "tms": {
+        "role": "Performance Analyst",
+        "company": "Top Motorsport Karting Team",
+        "duration": "2021 - Present"
+      },
+      "bdp": {
+        "role": "Driver Coach & Mechanic",
+        "company": "Brilliant Driver Program",
+        "duration": "2022 - 2024"
+      },
+      "coaching": {
+        "role": "1 on 1 Driver Coaching",
+        "duration": "2024 - Present",
+        "description": "Personalized 1-on-1 coaching to improve lap times, racecraft, and consistency with data-driven feedback and expert guidance."
+      },
+      "renauer": {
+        "role": "Driver Coach & Performance Analyst",
+        "company": "Renauer Motorsport F4 Team",
+        "duration": "2025 - Present"
+      }
+    },
+    "achievementsTitle": "My",
+    "achievementsHighlight": "Achievements",
+    "achievements": {
+      "rookie": {
+        "role": "Hungarian Rookie of the Year",
+        "duration": "2019"
+      },
+      "nationalChampion": {
+        "role": "Hungarian National Karting Champion",
+        "duration": "2022"
+      },
+      "worldChampionship": {
+        "role": "World Championship Finalist",
+        "duration": "2022"
+      },
+      "coachChampion": {
+        "role": "Hungarian National Champion",
+        "duration": "2024",
+        "description": "Won the Hungarian National Karting Championship in 2024 as a coach."
+      },
+      "cee": {
+        "role": "CEE Karting European Championship 3rd place",
+        "duration": "2025",
+        "description": "Finished in the top 3 in the CEE Karting European Championship as a coach in 2025."
+      }
+    }
+  },
+  "experiences": {
+    "title": "A small section of recents",
+    "titleHighlight": "work experiences",
+    "list": {
+      "nationalChampion": "Hungarian National Karting Champion",
+      "ceeChampionship": "CEE Karting European Championship 3rd place",
+      "bdpChampionships": "Several championships both as a coach and mechanic with BDP",
+      "rallyCross": "Winning my Debut race in the Hungarian RallyCross Championship"
+    }
+  },
+  "testimonials": {
+    "title": "Kind words from previous",
+    "titleHighlight": "clients",
+    "role": "Driver",
+    "simRacer": "SimRacer",
+    "list": {
+      "martin": "We had a great experience together with Berti. He immediately knew what to fix by just standing outside the track. I told him how I felt after the sessions, and we made some setup changes. After the first two sessions, I was the fastest on the track, and we finished the day feeling confident.",
+      "szoke": "Thanks to his racing background, he knows the challenges of kart racing. He easily finds common ground with everyone. His enthusiasm, up-to-date knowledge, and supportive attitude make it motivating to work with him, bringing real progress to every training session and race!",
+      "kristyna": "Berti is really great friend and even better coach. At every experience with him I had lots of fun and also learned a lot. He knows a lot from driving to setting up the kart, he always pushed to find a better way and tried to give me a competitive edge compared to others everytime",
+      "dome": "After picking up SimRacing as a hobby, I wanted to improve my skills to compete in the top packs in all games. Bertold helped me with my driving style and car setup, and I was able to improve my skills to compete and win in several races amongs very skilled drivers.",
+      "john": "I had a great experience working with Bertold. He is a very professional and knowledgeable driver."
+    }
+  },
+  "gallery": {
+    "title": "Gallery"
+  },
+  "contact": {
+    "title": "Schedule a call with me",
+    "titleHighlight": "to get started",
+    "description": "I'm always looking for new opportunities to work with drivers and teams.",
+    "descriptionHighlight": "If you have any questions or want to work with me, don't hesitate to contact me.",
+    "email": "bertold.bb@bbcoaching.com",
+    "phone": "+36 30 171 8116",
+    "location": "Budapest, Hungary",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Mobile Number",
+      "message": "Message",
+      "send": "Send",
+      "sending": "Sending…",
+      "success": "Thanks! Your message has been sent.",
+      "errorRequired": "Please fill in your name, email and message.",
+      "errorInvalidEmail": "Please enter a valid email address.",
+      "errorGeneric": "Failed to send message"
+    }
+  },
+  "footer": {
+    "copyright": "Copyright © 2025 BB Coaching. All rights reserved."
+  }
+}

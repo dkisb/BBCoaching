@@ -1,8 +1,10 @@
+'use client'
 import React, { useEffect, useState } from 'react'
 import { GalleryList } from '../../../constant/constants'
 import Image from 'next/image'
 import Carousel from 'react-multi-carousel';
 import "react-multi-carousel/lib/styles.css";
+import { useTranslations } from 'next-intl'
 
 const responsive = {
   desktop: {
@@ -82,6 +84,7 @@ const CustomRightArrow = ({ onClick, ...rest }: CarouselArrowProps) => (
 );
 
 const Gallery = () => {
+  const t = useTranslations('gallery');
   const [isMobile, setIsMobile] = useState(false);
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
@@ -138,7 +141,7 @@ const Gallery = () => {
 
   return (
     <div id='gallery' className='pt-16 pb-16'>
-      <h1 className='text-center text-2xl md:text-4xl xl:text-5xl font-bold text-black'>Gallery</h1>
+      <h1 className='text-center text-2xl md:text-4xl xl:text-5xl font-bold text-black'>{t('title')}</h1>
       <div className='w-[90%] sm:w-[70%] mx-auto mt-20'>
         <Carousel
           showDots={false}
