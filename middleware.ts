@@ -1,6 +1,6 @@
 import { NextResponse, type NextRequest } from 'next/server'
 import createMiddleware from 'next-intl/middleware'
-import { routing, type AppLocale } from './src/i18n/routing'
+import { routing, type AppLocale } from './i18n/routing'
 
 const intlMiddleware = createMiddleware(routing)
 const isLocale = (value: string | undefined): value is AppLocale =>

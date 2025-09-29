@@ -4,10 +4,10 @@ import { Analytics } from "@vercel/analytics/next"
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { routing } from '../../i18n/routing';
+import { routing } from '@/i18n/routing';
 import "../globals.css";
-import ResponsiveNav from "../../../components/Home/Navbar/ResponsiveNav";
-import Footer from "../../../components/Home/Footer/Footer";
+import ResponsiveNav from '@/components/Home/Navbar/ResponsiveNav';
+import Footer from '@/components/Home/Footer/Footer';
 
 const font = Inter({
   weight: ["100","200","300","400", "500", "600", "700", "800", "900"],

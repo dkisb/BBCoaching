@@ -5,7 +5,7 @@ import { Link as ScrollLink } from 'react-scroll';
 import { PiPhone } from 'react-icons/pi';
 import { HiBars3BottomRight } from 'react-icons/hi2';
 import { useTranslations } from 'next-intl';
-import LanguageSwitcher from '../../LanguageSwitcher/LanguageSwitcher';
+import LanguageSwitcher from '@/components/LanguageSwitcher/LanguageSwitcher';
 
 type Props = {
     openNav: () => void;

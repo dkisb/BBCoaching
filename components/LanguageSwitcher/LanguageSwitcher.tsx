@@ -1,7 +1,7 @@
 'use client'
 import { useLocale } from 'next-intl'
 import Image from 'next/image'
-import { usePathname, useRouter, type AppLocale } from '../../src/i18n/routing'
+import { usePathname, useRouter, type AppLocale } from '@/i18n/routing'
 
 const LanguageSwitcher = () => {
   const locale = useLocale()

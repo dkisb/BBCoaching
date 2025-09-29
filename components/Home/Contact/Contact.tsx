@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import { BiEnvelope, BiMap, BiPhone } from 'react-icons/bi'
-import { ContactList } from '../../../constant/constants'
+import { ContactList } from '@/constant/constants'
 import { useTranslations } from 'next-intl'
 
 const Contact = () => {

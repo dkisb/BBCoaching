@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import { GalleryList } from '../../../constant/constants'
+import { GalleryList } from '@/constant/constants'
 import Image from 'next/image'
 import Carousel from 'react-multi-carousel';
 import "react-multi-carousel/lib/styles.css";
