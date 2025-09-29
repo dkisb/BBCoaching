@@ -1,4 +1,3 @@
-
 'use client'
 import { useLocale } from 'next-intl'
 import Image from 'next/image'
