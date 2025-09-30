@@ -1,26 +1,30 @@
-import React from 'react'
-import Image from 'next/image'
+// components/Experiences/ExperienceCard.tsx
+import Image from "next/image";
 
 type Props = {
-    image: string;
-    title: string;
-    company?: string;
-}
+  image: string;
+  title: string;
+  company?: string;
+  imageAlt?: string;
+};
 
-const ExperienceCard = ({ image, title, company }: Props) => {
+export default function ExperienceCard({ image, title, company, imageAlt }: Props) {
   return (
-    <div>
-            <div>
-                <Image src={image} alt={title} width={800} height={650} className='rounded-lg' />
-            </div>
-            <h1 className='mt-4 text-xl sm:text-2xl font-semibold text-white'>
-                {title}
-            </h1>
-            <h1 className='pt-2 font-medium text-white/80'>
-            {company}
-            </h1>
-    </div>
-  )
+    <article>
+      <div>
+        <Image
+          src={image}
+          alt={imageAlt ?? title}
+          width={800}
+          height={650}
+          className="rounded-lg object-cover"
+          style={{ height: "auto" }}
+        />
+      </div>
+      <h3 className="mt-4 text-xl sm:text-2xl font-semibold text-white">{title}</h3>
+      {company ? (
+        <p className="pt-2 font-medium text-white/80">{company}</p>
+      ) : null}
+    </article>
+  );
 }
-
-export default ExperienceCard

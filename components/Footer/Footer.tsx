@@ -1,17 +1,13 @@
-'use client'
-import React from 'react'
-import { useTranslations } from 'next-intl'
+type FooterTranslations = {
+  copyright: string;
+};
 
-const Footer = () => {
-  const t = useTranslations('footer');
-  
+export default function Footer({ t }: { t: { copyright: string } }) {
+  const year = new Date().getFullYear();
+  const text = t.copyright.replace("{year}", String(year));
   return (
-    <div className='bg-black p-5'>
-        <h1 className='text-lg text-white/70 text-center'>
-        {t('copyright')}
-        </h1>
-    </div>
-  )
+    <footer className="bg-black p-5">
+      <p className="text-lg text-white/70 text-center">{text}</p>
+    </footer>
+  );
 }
-
-export default Footer
