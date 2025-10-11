@@ -3,20 +3,27 @@ import TestimonialsCarouselClient from "./TestimonialsCarouselClient";
 export type TestimonialsTranslations = {
   title: string;
   titleHighlight: string;
-  role: string; // generic role label like "Driver"
+  role: string;
   simRacer: string;
   list: {
     martin: string;
     szoke: string;
     kristyna: string;
     dome: string;
-    john: string;
+    simon: string;
   };
 };
 
 export default function Testimonials({ t }: { t: TestimonialsTranslations }) {
   // Localized testimonials list kept local to the component (no external constants)
   const testimonialsList = [
+    {
+      image: "/images/simon.jpeg",
+      name: "Simon Schranz",
+      role: t.role,
+      description: t.list.simon,
+      imageAlt: "Simon Schranz",
+    },
     {
       image: "/images/martin-head.jpeg",
       name: "Martin Ernesto Varga",
@@ -44,14 +51,7 @@ export default function Testimonials({ t }: { t: TestimonialsTranslations }) {
       role: t.simRacer,
       description: t.list.dome,
       imageAlt: "Döme Kisbalázs",
-    },
-    {
-      image: "/images/hero2.jpg",
-      name: "John Doe",
-      role: t.role,
-      description: t.list.john,
-      imageAlt: "John Doe",
-    },
+    }
   ];
 
   return (
