@@ -8,6 +8,7 @@ import Testimonials from "./Testimonials/Testimonials";
 import Contact from "./Contact/Contact";
 import About from "./About/About";
 import Gallery from "./Gallery/Gallery";
+import type { Messages } from "@/types/messages";
 
 // Optional generic AOS wrapper for sections that don't have their own wrappers
 import HomeAOSClient from "./HomeAOSClient";
@@ -15,7 +16,7 @@ import HomeAOSClient from "./HomeAOSClient";
 export default function Home({
   t,
 }: {
-  t: Record<string, any>;
+  t: Messages;
 }) {
   return (
     <div id="home" className="overflow-hidden bg-gray-400">

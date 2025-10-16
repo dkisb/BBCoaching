@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import Home from "@/components/Home";
 import AllSchema from "./AllSchema";
+import type { Messages } from "@/types/messages";
 
 export const revalidate = 3600; // ISR: regenerate up to once per hour
 
@@ -21,7 +22,7 @@ export default async function HomePage({
     notFound();
   }
 
-  const messages = (await getMessages({ locale })) as Record<string, any>;
+  const messages = (await getMessages({ locale })) as Messages;
 
   return (
     <>

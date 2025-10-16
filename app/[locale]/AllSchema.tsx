@@ -1,7 +1,5 @@
 // app/[locale]/AllSchema.tsx
-import type { ServicesTranslations } from "@/components/Services/Services";
-import type { TestimonialsTranslations } from "@/components/Testimonials/Testimonials";
-import type { ContactTranslations } from "@/components/Contact/Contact";
+import type { Messages } from "@/types/messages";
 
 export default function AllSchema({
   locale,
@@ -27,17 +25,7 @@ export default function AllSchema({
   },
 }: {
   locale: string;
-  t: {
-    services: ServicesTranslations;
-    testimonials: TestimonialsTranslations;
-    contact: ContactTranslations;
-    nav?: {
-      home?: string;
-      services?: string;
-      testimonials?: string;
-      contact?: string;
-    };
-  };
+  t: Messages;
   siteUrl: string;
   logoUrl: string;
   social?: string[];
