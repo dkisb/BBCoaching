@@ -14,14 +14,14 @@ const LOGO_URL = "https://bertoldbors.com/images/logoDark.png";
 export default async function HomePage({
   params,
 }: {
-  params: Promise<{ locale: (typeof routing.locales)[number] }>;
+  params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  if (!routing.locales.includes(locale)) {
+  if (!(routing.locales as readonly string[]).includes(locale)) {
     notFound();
   }
 
-  const messages = await getMessages({ locale });
+  const messages = (await getMessages({ locale })) as Record<string, any>;
 
   return (
     <>
@@ -48,7 +48,7 @@ export default async function HomePage({
           postalCode: "",
         }}
       />
-      <Home t={messages} locale={locale} />
+      <Home t={messages} />
     </>
   );
 }
