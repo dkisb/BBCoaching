@@ -1,7 +1,3 @@
-type FooterTranslations = {
-  copyright: string;
-};
-
 export default function Footer({ t }: { t: { copyright: string } }) {
   const year = new Date().getFullYear();
   const text = t.copyright.replace("{year}", String(year));

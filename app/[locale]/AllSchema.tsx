@@ -1,4 +1,8 @@
 // app/[locale]/AllSchema.tsx
+import type { ServicesTranslations } from "@/components/Services/Services";
+import type { TestimonialsTranslations } from "@/components/Testimonials/Testimonials";
+import type { ContactTranslations } from "@/components/Contact/Contact";
+
 export default function AllSchema({
   locale,
   t,
@@ -23,7 +27,17 @@ export default function AllSchema({
   },
 }: {
   locale: string;
-  t: any; // your messages object loaded for the locale
+  t: {
+    services: ServicesTranslations;
+    testimonials: TestimonialsTranslations;
+    contact: ContactTranslations;
+    nav?: {
+      home?: string;
+      services?: string;
+      testimonials?: string;
+      contact?: string;
+    };
+  };
   siteUrl: string;
   logoUrl: string;
   social?: string[];
@@ -84,11 +98,6 @@ export default function AllSchema({
       name: "Döme Kisbalázs",
       role: t.testimonials?.simRacer,
       reviewBody: t.testimonials?.list?.dome,
-    },
-    {
-      name: "John Doe",
-      role: t.testimonials?.role,
-      reviewBody: t.testimonials?.list?.john,
     },
   ]
     .filter((r) => r.reviewBody)

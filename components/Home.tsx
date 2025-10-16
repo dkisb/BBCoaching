@@ -12,12 +12,32 @@ import Gallery from "./Gallery/Gallery";
 // Optional generic AOS wrapper for sections that don't have their own wrappers
 import HomeAOSClient from "./HomeAOSClient";
 
+import type { HeroTranslations } from "./Hero/Hero";
+import type { AboutTranslations } from "./About/About";
+import type { ResumeTranslations } from "./Resume/Resume";
+import type { ExperiencesTranslations } from "./Experiences/Experiences";
+import type { SkillsTranslations } from "./Skills/Skills";
+import type { ServicesTranslations } from "./Services/Services";
+import type { TestimonialsTranslations } from "./Testimonials/Testimonials";
+import type { GalleryTranslations } from "./Gallery/Gallery";
+import type { ContactTranslations } from "./Contact/Contact";
+
+type HomeTranslations = {
+  hero: HeroTranslations;
+  about: AboutTranslations;
+  resume: ResumeTranslations;
+  experiences: ExperiencesTranslations;
+  skills: SkillsTranslations;
+  services: ServicesTranslations;
+  testimonials: TestimonialsTranslations;
+  gallery: GalleryTranslations;
+  contact: ContactTranslations;
+};
+
 export default function Home({
   t,
-  locale,
 }: {
-  t: any;
-  locale: string;
+  t: HomeTranslations;
 }) {
   return (
     <div id="home" className="overflow-hidden bg-gray-400">
