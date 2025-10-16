@@ -81,7 +81,9 @@ export default function Navbar({ openNav }: Props) {
         </nav>
 
         <div className="flex items-center space-x-4">
-          <LanguageSwitcher />
+          <div className="hidden lg:block">
+            <LanguageSwitcher />
+          </div>
           <a
             href="#contact"
             onClick={(e) => {
@@ -90,8 +92,8 @@ export default function Navbar({ openNav }: Props) {
             }}
             className="inline-block"
           >
-            <button className="px-8 py-3.5 text-sm cursor-pointer rounded-lg bg-[#0055ff] hover:bg-blue-900 transition-all duration-300 text-white flex items-center space-x-2">
-              <PiPhone className="w-5 h-5" />
+            <button className="px-4 py-2 sm:px-6 sm:py-2.5 text-xs sm:text-sm cursor-pointer rounded-lg bg-[#0055ff] hover:bg-blue-900 transition-all duration-300 text-white flex items-center space-x-2">
+              <PiPhone className="w-4 h-4 sm:w-5 sm:h-5" />
               <span className="whitespace-nowrap">{t("bookCall")}</span>
             </button>
           </a>

@@ -4,6 +4,7 @@ import React from "react";
 import { CgClose } from "react-icons/cg";
 import { useTranslations } from "next-intl";
 import { smoothScrollTo } from "../../helper";
+import LanguageSwitcher from "@/components/LanguageSwitcher/LanguageSwitcher";
 
 type Props = {
   showNav: boolean;
@@ -47,7 +48,11 @@ export default function MobileNav({ showNav, closeNav }: Props) {
           <CgClose className="w-full h-full" />
         </button>
 
-        <ul className="mt-16">
+        <div className="px-12 mb-6">
+          <LanguageSwitcher />
+        </div>
+
+        <ul>
           {navLinks.map((link) => (
             <li key={link.id} className="mb-4">
               <a
