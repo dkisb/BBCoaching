@@ -27,7 +27,6 @@ export default function Hero({ t }: Props) {
           width={150}
           height={150}
           className="rounded-full border-8 border-[#0c0c48aa]"
-          style={{ height: "auto" }}
           priority
         />
 

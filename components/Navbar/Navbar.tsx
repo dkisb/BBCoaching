@@ -55,7 +55,7 @@ export default function Navbar({ openNav }: Props) {
               alt="BB Coaching logo"
               width={180}
               height={180}
-              className="w-full h-full object-contain"
+              className="object-contain"
               priority
             />
           </a>

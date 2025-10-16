@@ -27,6 +27,7 @@ export default function ResumeCard({
             width={80}
             height={80}
             className="object-contain w-16 h-16 sm:w-20 sm:h-20"
+            style={{ width: "auto", height: "auto" }}
             sizes="80px"
             priority={false}
           />

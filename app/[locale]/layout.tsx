@@ -85,7 +85,7 @@ export default async function RootLayout({
   const messages = await getMessages({ locale });
 
   return (
-    <html lang={locale}>
+    <html lang={locale} data-scroll-behavior="smooth">
       <body className={`${font.className} antialiased bg-white`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ResponsiveNav />

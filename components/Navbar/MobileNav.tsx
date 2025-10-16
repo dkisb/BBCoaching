@@ -49,7 +49,7 @@ export default function MobileNav({ showNav, closeNav }: Props) {
         </button>
 
         <div className="px-12 mb-6">
-          <LanguageSwitcher />
+          <LanguageSwitcher variant="mobile" />
         </div>
 
         <ul>

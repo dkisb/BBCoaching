@@ -34,6 +34,7 @@ export default function TestimonialCard({
           width={80}
           height={80}
           className="object-cover object-top w-full h-full"
+          style={{ width: "auto", height: "auto" }}
           loading="lazy"
         />
       </div>

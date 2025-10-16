@@ -105,6 +105,7 @@ export default function ContactFormClient({ t }: { t: FormT }) {
           placeholder={t.email}
           autoComplete="email"
           className="px-4 py-3.5 mt-6 bg-[#363659] text-white outline-none rounded-md w-full placeholder:text-white/70"
+          suppressHydrationWarning
         />
 
         <label className="sr-only" htmlFor="phone">
