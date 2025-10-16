@@ -1,0 +1,161 @@
+{
+"metadata": {
+"title": "BB Coaching Professzionális Versenyképzés",
+"description": "BB Coaching Professzionális Versenyképzés Bors Bertoldtól"
+},
+"nav": {
+"home": "Kezdőlap",
+"about": "Rólam",
+"experiences": "Tapasztalatok",
+"services": "Szolgáltatások",
+"testimonials": "Vélemények",
+"gallery": "Galéria",
+"contact": "Kapcsolat",
+"bookCall": "Időpont foglalás"
+},
+"hero": {
+"title": "A jövő bajnokainak",
+"titleHighlight": "fejlesztése",
+"subtitle": "Helló! Bertold vagyok - a BB Coaching alapítója",
+"readMore": "Többet"
+},
+"about": {
+"title": "A",
+"titleHighlight": "BB Coaching-ról",
+"paragraph1": "Bertold vagyok, országos bajnok és driver coach, aki szenvedélyesen segíti a versenyzőket teljes potenciáljuk elérésében. A telemetria elemzés, verseny adatok és valós versenyzési tapasztalat kombinálásával strukturált edzést nyújtok, ami javítja a köridőket, versenyképességet és a versenyző következetességét.",
+"paragraph2": "A fókuszom a versenyzők fejlesztése a motorsport minden szintjén - az erős alapok lefektetésétől a junior kategóriától, egészen a tapasztalt versenyzők győzelemért való hajszáig. Egy holisztikus megközelítéssel, ami magában foglalja a jármű beállítását, adatelemzést valamint értékelést és mentális felkészítést, megadom a versenyzőknek azt a előnyt, amivel elérhetnek a dobogó legfelső fokára.",
+"stat1Title": "Több mint egy évtized",
+"stat1Description": "A motorsportban",
+"stat2Title": "Adatvezérelt",
+"stat2Description": "Elemzés és Edzés",
+"getInTouch": "Lépj kapcsolatba"
+},
+"services": {
+"title": "Segítek a versenyzőknek",
+"titleHighlight": "elérni teljes potenciáljukat",
+"performanceAnalysis": {
+"name": "Teljesítmény Elemzés",
+"description": "Veled dolgozom, hogy részletesen elemezem a vezetésedet, adatokat, videót és a visszajelzésedet használva, hogy megtaláljam, hol tudsz még fejlődni. A cél egyszerű: segítek megtalálni azokat az extra tizedeket, tapasztalatot nyerni és magabiztosabbnak érezni magad a pályán."
+},
+"vehicleSetup": {
+"name": "Jármű Beállítás",
+"description": "Az autó helyes beállítása mindent megváltoztat. Segítek beállítani mindent a felfüggesztéstől a gumiabroncs nyomásig, hogy az autó illeszkedjen a vezetési stílusodhoz és az optimális körülményekhez."
+},
+"mentalTraining": {
+"name": "Mentális Edzés",
+"description": "A versenyzés nem csak fizikai - mentális is. Megosztok eszközöket és technikákat, amik segítettek nekem (és más versenyzőknek) koncentráltnak maradni, kezelni a nyomást és tiszta fejjel maradni, amikor a legjobban számít."
+}
+},
+"skills": {
+"title": "Készségeim és",
+"titleHighlight": "Képességeim",
+"performanceAnalysis": "Teljesítmény Elemzés",
+"vehicleSetup": "Jármű Beállítás",
+"dataVideoAnalysis": "Adat és Videó Elemzés",
+"driverDevelopment": "Versenyző Fejlesztés"
+},
+"resume": {
+"workExperience": "Munka",
+"workExperienceHighlight": "Tapasztalataim",
+"achievementsTitle": "Személyes",
+"achievementsHighlight": "Eredményeim",
+"jobs": {
+"tms": {
+"role": "Teljesítmény Elemző",
+"company": "Top Motorsport Karting Csapat",
+"duration": "2021 - Jelen"
+},
+"bdp": {
+"role": "Versenyző Edző és Szerelő",
+"company": "Brilliant Driver Program",
+"duration": "2022 - 2024"
+},
+"coaching": {
+"role": "1-1 Versenyző Edzés",
+"duration": "2024 - Jelen",
+"description": "Személyre szabott 1-1 edzés a köridők javítására, versenytechnika és következetesség fejlesztésére adatvezérelt visszajelzéssel és szakértői útmutatással."
+},
+"renauer": {
+"role": "Versenyző Edző és Teljesítmény Elemző",
+"company": "Renauer Motorsport F4 Csapat",
+"duration": "2025 - Jelen"
+}
+},
+"achievementsTitle": "",
+"achievementsHighlight": "Eredményeim",
+"achievements": {
+"rookie": {
+"role": "Magyar Év Újonca",
+"duration": "2019"
+},
+"nationalChampion": {
+"role": "Magyar Országos Gokart Bajnok",
+"duration": "2022"
+},
+"worldChampionship": {
+"role": "Világbajnoki Döntős",
+"duration": "2022"
+},
+"coachChampion": {
+"role": "Magyar Országos Bajnok",
+"duration": "2024",
+"description": "Megnyertem a Magyar Országos Gokart Bajnokságot 2024-ben edzőként."
+},
+"cee": {
+"role": "CEE Gokart Európa Bajnokság 3. hely",
+"duration": "2025",
+"description": "Az első háromban végeztem a CEE Gokart Európa Bajnokságon edzőként 2025-ben."
+}
+}
+},
+"experiences": {
+"title": "Néhány a legutóbbi",
+"titleHighlight": "munka tapasztalataimból",
+"list": {
+"nationalChampion": "Magyar Országos Gokart Bajnok",
+"ceeChampionship": "CEE Gokart Európa Bajnokság 3. hely",
+"bdpChampionships": "Több bajnokság edzőként és szerelőként a BDP-vel",
+"rallyCross": "Debütáló versenyem megnyerése a Magyar RallyCross Bajnokságban"
+}
+},
+"testimonials": {
+"title": "Kedves szavak korábbi",
+"titleHighlight": "ügyfelektől",
+"role": "Versenyző",
+"simRacer": "Sim Versenyző",
+"list": {
+"martin": "Nagyszerű élmény együtt dolgozni Bertivel. Azonnal tudta, mit kell javítani, csak a pálya széléről nézve. Elmondtam neki, hogyan éreztem magam az edzések után, és végeztünk néhány beállítási változtatást. Az első két edzés után én voltam a leggyorsabb a pályán, és magabiztosan fejeztük be a napot.",
+"szoke": "Versenyző múltjának köszönhetően ismeri a gokart versenyzés kihívásait. Könnyen talál közös hangot mindenkivel. Lelkesedése, naprakész tudása és támogató hozzáállása motiválóvá teszi vele a munkát, valódi előrelépést hozva minden edzésen és versenyen!",
+"kristyna": "Berti igazán remek barát és még jobb edző. Minden alkalommal sokat tanultam. Sokat tud a vezetésről a gokart beállításáig, mindig ösztönzött, hogy megtaláljuk és próbált versenyelőnyt adni másokkal szemben minden alkalommal",
+"dome": "Miután hobbimként elkezdtem a Szimulátor Versenyzést, javítani akartam a képességeimet, hogy versenyezhessek a legjobbakkal minden játékban. Bertold segített a vezetési stílusomban és az autó beállításában, és képes voltam fejleszteni a képességeimet, hogy versenyezzek és nyerjek több versenyen nagyon képzett versenyzők között.",
+"simon": "Öröm volt együtt dolgozni Bertivel három fordulón keresztül az FIA F4 CEZ Bajnokságban, és minden pillanatát élveztem. Nagyra értékeltem, ahogy versenyzőként foglalkozott velem: meghallgatta a véleményem, időt szánt rám, ismerte a gyengeségeimet és segített fejlődni. Nagyon jól éreztem magam vele a pályán, és egy kicsit közelebb kerültem ahhoz, hogy igazán jó autóversenyzővé váljak."
+}
+},
+"gallery": {
+"title": "Galéria"
+},
+"contact": {
+"title": "Foglalj időpontot velem",
+"titleHighlight": "hogy elkezdhessük",
+"description": "Mindig keresek új lehetőségeket, hogy versenyzőkkel és csapatokkal dolgozhassak.",
+"descriptionHighlight": "Ha bármilyen kérdésed van, vagy dolgozni szeretnél velem, ne habozz kapcsolatba lépni.",
+"email": "bertold.bb@bbcoaching.com",
+"phone": "+36 30 171 8116",
+"location": "Budapest, Magyarország",
+"form": {
+"name": "Név",
+"email": "Email",
+"phone": "Telefonszám",
+"message": "Üzenet",
+"send": "Küldés",
+"sending": "Küldés…",
+"success": "Köszönöm! Az üzeneted elküldve.",
+"errorRequired": "Kérlek töltsd ki a neved, email címed és üzeneted.",
+"errorInvalidEmail": "Kérlek adj meg egy érvényes email címet.",
+"errorGeneric": "Nem sikerült elküldeni az üzenetet"
+}
+},
+"footer": {
+"copyright": "Copyright © 2025 BB Coaching. Minden jog fenntartva."
+}
+}
