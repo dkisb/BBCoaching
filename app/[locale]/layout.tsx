@@ -22,10 +22,10 @@ const font = Inter({
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ locale: (typeof routing.locales)[number] }>;
+  params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  if (!routing.locales.includes(locale)) {
+  if (!(routing.locales as readonly string[]).includes(locale)) {
     notFound();
   }
   const messages = await getMessages({ locale });
@@ -74,11 +74,11 @@ export default async function RootLayout({
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: Promise<{ locale: (typeof routing.locales)[number] }>;
+  params: Promise<{ locale: string }>;
 }>) {
   const { locale } = await params;
 
-  if (!routing.locales.includes(locale)) {
+  if (!(routing.locales as readonly string[]).includes(locale)) {
     notFound();
   }
 
