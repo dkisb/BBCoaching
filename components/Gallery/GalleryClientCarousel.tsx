@@ -98,7 +98,7 @@ export default function GalleryCarouselClient({
           infinite
           autoPlay={autoPlay}
           autoPlaySpeed={2000}
-          itemClass="px-4"
+          itemClass="px-4 sm:px-6 md:px-8"
           {...arrowProps}
         >
           {items.map((g, i) => (
@@ -108,16 +108,16 @@ export default function GalleryCarouselClient({
               onClick={() => setExpandedIndex(i)}
               type="button"
               aria-label={`Open image ${i + 1}`}
-              style={{ background: "transparent" }}
+              style={{ background: "transparent", border: "none", padding: 0 }}
             >
-              <div className="relative w-[300px] h-[300px] md:w-[350px] md:h-[350px] xl:w-[400px] xl:h-[400px]">
+              <div className="relative w-[280px] h-[280px] sm:w-[300px] sm:h-[300px] md:w-[320px] md:h-[320px] xl:w-[350px] xl:h-[350px] overflow-hidden rounded-lg shadow-lg">
                 <Image
                   src={g.image}
                   alt={g.alt}
                   fill
                   style={{ objectFit: "cover" }}
-                  className="rounded shadow-md transition-transform duration-200 hover:scale-105"
-                  sizes="(max-width: 764px) 300px, (max-width: 1324px) 350px, 400px"
+                  className="transition-transform duration-300 hover:scale-110"
+                  sizes="(max-width: 640px) 280px, (max-width: 764px) 300px, (max-width: 1324px) 320px, 350px"
                   priority={i === 0}
                 />
               </div>

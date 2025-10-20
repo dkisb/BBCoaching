@@ -1,4 +1,3 @@
-// components/About/About.tsx
 import Image from "next/image";
 import AboutClient from "./AboutClient";
 

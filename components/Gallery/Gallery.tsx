@@ -15,10 +15,11 @@ export default function Gallery({ t }: { t: GalleryTranslations }) {
     { id: 1, image: "/images/rx2.jpg" },
     { id: 2, image: "/images/martinka2.jpeg" },
     { id: 3, image: "/images/markusz.jpeg" },
-    { id: 4, image: "/images/kika.jpg" },
+    { id: 4, image: "/images/kika.jpeg" },
     { id: 5, image: "/images/world-champs.jpg" },
     { id: 6, image: "/images/szoke-m.jpeg" },
     { id: 7, image: "/images/martin-head.jpeg" },
+    { id: 8, image: "/images/shranziGallery.jpg" },
   ];
 
   const items = GalleryList.map((it, i) => ({

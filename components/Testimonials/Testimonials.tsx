@@ -18,7 +18,7 @@ export default function Testimonials({ t }: { t: TestimonialsTranslations }) {
   // Localized testimonials list kept local to the component (no external constants)
   const testimonialsList = [
     {
-      image: "/images/simon.jpeg",
+      image: "/images/shranzi.jpg",
       name: "Simon Schranz",
       role: t.role,
       description: t.list.simon,
