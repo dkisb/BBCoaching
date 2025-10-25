@@ -16,7 +16,6 @@ export type ResumeTranslations = {
     rookie: { role: string; duration: string };
     nationalChampion: { role: string; duration: string };
     worldChampionship: { role: string; duration: string };
-    coachChampion: { role: string; duration: string; description?: string };
     cee: { role: string; duration: string; description?: string };
   };
 };
@@ -72,13 +71,6 @@ export default function Resume({ t }: { t: ResumeTranslations }) {
       role: t.achievements.worldChampionship.role,
       duration: t.achievements.worldChampionship.duration,
       imageAlt: t.achievements.worldChampionship.role,
-    },
-    {
-      icon: "/images/markusz.jpeg",
-      role: t.achievements.coachChampion.role,
-      duration: t.achievements.coachChampion.duration,
-      description: t.achievements.coachChampion.description,
-      imageAlt: t.achievements.coachChampion.role,
     },
     {
       icon: "/images/bdp.jpeg",
