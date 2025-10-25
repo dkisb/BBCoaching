@@ -123,13 +123,13 @@ export default function GalleryCarouselClient({
               aria-label={`Open image ${i + 1}`}
               style={{ background: "transparent", border: "none", padding: 0 }}
             >
-              <div className="relative w-[280px] h-[280px] sm:w-[300px] sm:h-[300px] md:w-[320px] md:h-[320px] xl:w-[350px] xl:h-[350px] overflow-hidden rounded-lg shadow-lg">
+              <div className="relative w-[280px] h-[280px] sm:w-[300px] sm:h-[300px] md:w-[320px] md:h-[320px] xl:w-[350px] xl:h-[350px] overflow-hidden shadow-lg">
                 <Image
                   src={g.image}
                   alt={g.alt}
                   fill
-                  style={{ objectFit: "cover" }}
-                  className="transition-transform duration-300 hover:scale-110"
+                  style={{ objectFit: "contain" }}
+                  className=""
                   sizes="(max-width: 640px) 280px, (max-width: 764px) 300px, (max-width: 1324px) 320px, 350px"
                   priority={i === 0}
                 />
@@ -186,7 +186,7 @@ export default function GalleryCarouselClient({
                 alt={items[expandedIndex].alt}
                 fill
                 style={{ objectFit: "contain" }}
-                className="rounded"
+                className=""
                 priority
               />
             </div>
