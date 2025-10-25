@@ -12,9 +12,12 @@ type GalleryItem = {
 };
 
 const responsive = {
-  desktop: { breakpoint: { max: 3000, min: 1324 }, items: 3, slidesToSlide: 1 },
-  tablet: { breakpoint: { max: 1324, min: 764 }, items: 2, slidesToSlide: 1 },
-  mobile: { breakpoint: { max: 764, min: 0 }, items: 1, slidesToSlide: 1 },
+  desktopXL: { breakpoint: { max: 3000, min: 1536 }, items: 3, slidesToSlide: 1 },
+  desktopL: { breakpoint: { max: 1536, min: 1280 }, items: 3, slidesToSlide: 1 },
+  desktopM: { breakpoint: { max: 1280, min: 1024 }, items: 3, slidesToSlide: 1 },
+  desktopS: { breakpoint: { max: 1024, min: 768 }, items: 2, slidesToSlide: 1 },
+  tablet: { breakpoint: { max: 768, min: 640 }, items: 1, slidesToSlide: 1 },
+  mobile: { breakpoint: { max: 640, min: 0 }, items: 1, slidesToSlide: 1 },
 };
 
 function ArrowButton({
@@ -32,20 +35,24 @@ function ArrowButton({
       aria-label={direction === "left" ? "Previous" : "Next"}
       onClick={onClick}
       disabled={disabled}
-      className={`react-multi-carousel-arrow react-multi-carousel-arrow--${direction}`}
+      className={`react-multi-carousel-arrow react-multi-carousel-arrow--${direction} hover:bg-black/80 transition-all`}
       style={{
         position: "absolute",
-        [direction]: 0,
-        top: "calc(50% - 15px)",
+        [direction]: "0",
+        top: "50%",
+        transform: "translateY(-50%)",
         zIndex: 2,
-        background: "rgba(0,0,0,0.5)",
+        background: "rgba(0,0,0,0.6)",
         border: "none",
         borderRadius: "50%",
-        width: 40,
-        height: 40,
+        width: 45,
+        height: 45,
         color: "white",
-        fontSize: 24,
+        fontSize: 26,
         cursor: "pointer",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
       } as React.CSSProperties}
     >
       {direction === "left" ? "←" : "→"}
@@ -91,14 +98,20 @@ export default function GalleryCarouselClient({
 
   return (
     <>
-      <div className="w-[90%] sm:w-[70%] mx-auto mt-20 relative">
+      <div className="w-full max-w-[1400px] mx-auto mt-20 px-16 sm:px-20 md:px-24 lg:px-28 relative">
         <Carousel
           showDots={false}
           responsive={responsive}
-          infinite
+          infinite={true}
           autoPlay={autoPlay}
           autoPlaySpeed={2000}
-          itemClass="px-4 sm:px-6 md:px-8"
+          keyBoardControl
+          transitionDuration={500}
+          itemClass="px-3 sm:px-4 md:px-5 lg:px-6"
+          swipeable
+          draggable
+          ssr
+          shouldResetAutoplay={false}
           {...arrowProps}
         >
           {items.map((g, i) => (
