@@ -13,9 +13,9 @@
     <br />
     <a href="https://bertoldbors.com">View Demo</a>
     ·
-    <a href="https://github.com/yourusername/BBCoaching/issues">Report Bug</a>
+    <a href="https://github.com/dkisb/BBCoaching/issues">Report Bug</a>
     ·
-    <a href="https://github.com/yourusername/BBCoaching/issues">Request Feature</a>
+    <a href="https://github.com/dkisb/BBCoaching/issues">Request Feature</a>
   </p>
 </div>
 
