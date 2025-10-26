@@ -1,36 +1,157 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
+  <a href="https://bertoldbors.com">
+    <img src="public/images/logoDark.png" alt="Logo" width="200" height="250">
+  </a>
+
+  <h3 align="center">BB Coaching</h3>
+
+  <p align="center">
+    Professional Motorsport Coaching & Performance Analysis
+    <br />
+    <a href="https://bertoldbors.com"><strong>Visit Website »</strong></a>
+    <br />
+    <br />
+    <a href="https://bertoldbors.com">View Demo</a>
+    ·
+    <a href="https://github.com/yourusername/BBCoaching/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/yourusername/BBCoaching/issues">Request Feature</a>
+  </p>
+</div>
+
+## About The Project
+
+[![BB Coaching Screenshot][product-screenshot]](https://bertoldbors.com)
+
+BB Coaching is a professional motorsport coaching platform founded by Bertold Bors, a motorsport performance analyst and driver development coach. The platform helps racing drivers reach their full potential through telemetry analysis, race data insights, and real-world racing experience.
+
+### Key Features:
+* **Performance Analysis** - Data-driven coaching to improve lap times and consistency
+* **Vehicle Setup** - Expert guidance on suspension, tire pressures, and car configuration
+* **Mental Training** - Techniques to manage pressure and maintain focus
+* **Multilingual Support** - Available in English and Hungarian
+* **Interactive Gallery** - Showcase of racing achievements and experiences
+* **Testimonials** - Real feedback from coached drivers and clients
+
+### Built With
+
+This project is built using modern web technologies for optimal performance and user experience:
+
+* [![Next][Next.js]][Next-url]
+* [![React][React.js]][React-url]
+* [![TypeScript][TypeScript]][TypeScript-url]
+* [![TailwindCSS][TailwindCSS]][Tailwind-url]
 
 ## Getting Started
 
-First, run the development server:
+To get a local copy up and running, follow these simple steps.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Make sure you have the following installed:
+* Node.js (v20 or higher)
+* pnpm
+  ```sh
+  npm install -g pnpm
+  ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Clone the repo
+   ```sh
+   git clone https://github.com/yourusername/BBCoaching.git
+   ```
+2. Navigate to the project directory
+   ```sh
+   cd BBCoaching
+   ```
+3. Install dependencies
+   ```sh
+   pnpm install
+   ```
+4. Create a `.env.local` file in the root directory and add your environment variables
+   ```env
+   RESEND_API_KEY=your_resend_api_key
+   ```
+5. Run the development server
+   ```sh
+   pnpm dev
+   ```
+6. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-## Learn More
+## Usage
 
-To learn more about Next.js, take a look at the following resources:
+The BB Coaching website provides a comprehensive platform for motorsport coaching services:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### For Visitors:
+- Browse coaching services and expertise areas
+- View testimonials from previous clients
+- Explore the gallery of racing achievements
+- Contact Bertold directly through the contact form
+- Switch between English and Hungarian languages
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### For Developers:
+- The project uses Next.js 15 with the App Router
+- Internationalization is handled via `next-intl`
+- Animations are powered by AOS (Animate On Scroll)
+- Contact form submissions use Resend for email delivery
+- Responsive design with mobile-first approach
 
-## Deploy on Vercel
+## Roadmap
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [x] Multi-language support (EN/HU)
+- [x] Contact form with email integration
+- [x] Responsive design
+- [x] Gallery carousel
+- [x] Testimonials section
+- [x] Online booking system
+- [ ] Blog section for racing insights
+- [ ] Driver performance dashboard
+- [ ] Video analysis tools
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See the [open issues](https://github.com/yourusername/BBCoaching/issues) for a full list of proposed features (and known issues).
+
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+Distributed under a proprietary license. All rights reserved by BB Coaching.
+
+## Contact
+
+Bertold Bors - [@bbcoaching](https://bertoldbors.com) - bors.bertold@gmail.com
+
+Project Link: [https://github.com/dkisb/BBCoaching](https://github.com/dkisb/BBCoaching)
+
+## Acknowledgments
+
+* [Next.js Documentation](https://nextjs.org/docs)
+* [next-intl](https://next-intl-docs.vercel.app/)
+* [AOS - Animate On Scroll](https://michalsnik.github.io/aos/)
+* [React Icons](https://react-icons.github.io/react-icons/)
+* [Resend](https://resend.com/)
+* [Vercel Analytics](https://vercel.com/analytics)
+* [Best-README-Template](https://github.com/othneildrew/Best-README-Template)
+
+<!-- MARKDOWN LINKS & IMAGES -->
+[product-screenshot]: public/images/about.jpg
+[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[Next-url]: https://nextjs.org/
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
+[TypeScript]: https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white
+[TypeScript-url]: https://www.typescriptlang.org/
+[TailwindCSS]: https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white
+[Tailwind-url]: https://tailwindcss.com/
+
