@@ -83,17 +83,17 @@ export default function Resume({ t }: { t: ResumeTranslations }) {
 
   return (
     <section id="resume" className="pt-20 pb-16">
-      <div className="w-[90%] sm:w-[70%] mx-auto grid grid-cols-1 xl:grid-cols-2 gap-10">
+      <div className="w-[95%] sm:w-[90%] lg:w-[70%] mx-auto grid grid-cols-1 xl:grid-cols-2 gap-8 xl:gap-10">
         {/* Work Experience */}
-        <div>
-          <h2 className="text-3xl font-bold sm:text-4xl text-white">
+        <div className="flex flex-col items-center xl:items-start">
+          <h2 className="text-2xl font-bold sm:text-3xl lg:text-4xl text-white text-center xl:text-left break-words w-full">
             {t.workExperience}{" "}
             <span className="text-[#0055ff]">{t.workExperienceHighlight}</span>
           </h2>
-          <div className="mt-10">
+          <div className="mt-8 sm:mt-10 w-full">
             {/* Optional animation wrapper; remove if not needed */}
             <AOSBlock animation="zoom-in" delay={100}>
-              <div>
+              <div className="space-y-4 flex flex-col items-center xl:items-start w-full">
                 {work.map((item, idx) => (
                   <ResumeCard key={`${item.role}-${idx}`} {...item} />
                 ))}
@@ -103,14 +103,14 @@ export default function Resume({ t }: { t: ResumeTranslations }) {
         </div>
 
         {/* Personal Achievements */}
-        <div>
-          <h2 className="text-3xl font-bold sm:text-4xl text-white">
+        <div className="flex flex-col items-center xl:items-start">
+          <h2 className="text-2xl font-bold sm:text-3xl lg:text-4xl text-white text-center xl:text-left break-words w-full">
             {t.achievementsTitle}{" "}
             <span className="text-[#0055ff]">{t.achievementsHighlight}</span>
           </h2>
-          <div className="mt-10">
+          <div className="mt-8 sm:mt-10 w-full">
             <AOSBlock animation="zoom-in" delay={100}>
-              <div>
+              <div className="space-y-4 flex flex-col items-center xl:items-start w-full">
                 {achievements.map((item, idx) => (
                   <ResumeCard key={`${item.role}-${idx}`} {...item} />
                 ))}

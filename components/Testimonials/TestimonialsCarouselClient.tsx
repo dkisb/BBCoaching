@@ -16,9 +16,9 @@ export default function TestimonialsCarouselClient({
 }: {
   items: Testimonial[];
 }) {
-  // Disable autoplay on small screens without resize listeners
+  // Disable autoplay on mobile screens (below 764px)
   const autoPlay = useMemo(() => {
-    if (typeof window === "undefined") return true;
+    if (typeof window === "undefined") return false;
     return window.matchMedia?.("(min-width: 764px)").matches;
   }, []);
 
