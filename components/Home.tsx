@@ -27,11 +27,8 @@ export default function Home({
       <About t={t.about} />
 
       {/* Resume: wrap once if you want a section-level animation */}
-      <HomeAOSClient>
-        <Resume t={t.resume} />
-      </HomeAOSClient>
+      <Resume t={t.resume} />
 
-      {/* Experiences: we added AOSBlock in grid/cards; a section-level wrapper is optional */}
       <Experiences t={t.experiences} />
 
       {/* Skills: uses AOSBlock (and optional TiltWrapper) per card; no outer wrapper needed */}
