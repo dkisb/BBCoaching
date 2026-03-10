@@ -6,7 +6,8 @@ export type HeroTranslations = {
   title: string;
   titleHighlight: string;
   subtitle: string;
-  partnerPrefix: string;
+  partnerPrefix?: string;
+  partnerSuffix?: string;
   readMore: string;
   imageAlt?: string;
 };
@@ -39,9 +40,11 @@ export default function Hero({ t }: Props) {
         </h2>
 
         <div className="flex items-center justify-center gap-3 sm:gap-4 flex-wrap">
-          <span className="text-sm sm:text-base font-semibold">
-            {t.partnerPrefix}
-          </span>
+          {t.partnerPrefix ? (
+            <span className="text-sm sm:text-base font-semibold">
+              {t.partnerPrefix}
+            </span>
+          ) : null}
           <span className="inline-flex items-center rounded-md border border-slate-700 bg-slate-900 px-3 py-1.5 shadow-sm">
             <Image
               src="/images/sportgarage.svg"
@@ -51,6 +54,11 @@ export default function Hero({ t }: Props) {
               className="h-auto w-48 sm:w-60"
             />
           </span>
+          {t.partnerSuffix ? (
+            <span className="text-sm sm:text-base font-semibold">
+              {t.partnerSuffix}
+            </span>
+          ) : null}
         </div>
 
         <HeroClient ctaText={t.readMore} />
