@@ -99,19 +99,18 @@ export default function Resume({ t }: { t: ResumeTranslations }) {
 
   return (
     <section id="resume" className="pt-20 pb-16">
-      <div className="w-[95%] sm:w-[90%] lg:w-[70%] mx-auto grid grid-cols-1 xl:grid-cols-2 gap-8 xl:gap-10">
+      <div className="w-[90%] md:w-[85%] lg:w-[78%] mx-auto">
         {/* Work Experience */}
-        <div className="flex flex-col items-center xl:items-start">
-          <h2 className="text-2xl font-bold sm:text-3xl lg:text-4xl text-white text-center xl:text-left break-words w-full">
+        <div>
+          <h2 className="text-2xl font-bold sm:text-3xl lg:text-4xl text-slate-900 text-center md:text-left break-words w-full">
             {t.workExperience}{" "}
             <span className="text-[#0055ff]">{t.workExperienceHighlight}</span>
           </h2>
           <div className="mt-8 sm:mt-10 w-full">
-            {/* Optional animation wrapper; remove if not needed */}
             <AOSBlock animation="zoom-in" delay={100}>
-              <div className="space-y-4 flex flex-col items-center xl:items-start w-full">
+              <div className="grid grid-cols-1 md:grid-cols-2 md:auto-rows-fr gap-4 items-stretch justify-items-center">
                 {work.map((item, idx) => (
-                  <ResumeCard key={`${item.role}-${idx}`} {...item} />
+                  <ResumeCard key={`${item.role}-${idx}`} {...item} className="w-full max-w-[540px]" />
                 ))}
               </div>
             </AOSBlock>
@@ -119,16 +118,21 @@ export default function Resume({ t }: { t: ResumeTranslations }) {
         </div>
 
         {/* Personal Achievements */}
-        <div className="flex flex-col items-center xl:items-start">
-          <h2 className="text-2xl font-bold sm:text-3xl lg:text-4xl text-white text-center xl:text-left break-words w-full">
+        <div className="mt-10">
+          <h2 className="text-2xl font-bold sm:text-3xl lg:text-4xl text-slate-900 text-center md:text-left break-words w-full">
             {t.achievementsTitle}{" "}
             <span className="text-[#0055ff]">{t.achievementsHighlight}</span>
           </h2>
           <div className="mt-8 sm:mt-10 w-full">
             <AOSBlock animation="zoom-in" delay={100}>
-              <div className="space-y-4 flex flex-col items-center xl:items-start w-full">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 items-start justify-items-center">
                 {achievements.map((item, idx) => (
-                  <ResumeCard key={`${item.role}-${idx}`} {...item} />
+                  <ResumeCard
+                    key={`${item.role}-${idx}`}
+                    {...item}
+                    compact
+                    className="w-full max-w-[560px]"
+                  />
                 ))}
               </div>
             </AOSBlock>

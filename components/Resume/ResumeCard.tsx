@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { Card } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 export type ResumeCardProps = {
   icon: string;
@@ -7,6 +9,8 @@ export type ResumeCardProps = {
   duration?: string;
   description?: string;
   imageAlt?: string;
+  compact?: boolean;
+  className?: string;
 };
 
 export default function ResumeCard({
@@ -16,56 +20,98 @@ export default function ResumeCard({
   duration,
   description,
   imageAlt,
+  compact = false,
+  className,
 }: ResumeCardProps) {
+  const title = company ?? role;
+  const subtitle = company ? role : undefined;
+
+  if (compact) {
+    return (
+      <Card
+        size="sm"
+        className={cn("h-auto min-h-[140px] border-slate-200 bg-white", className)}
+        aria-label={role}
+      >
+        <div className="flex h-full items-start gap-4 p-4">
+          <div className="flex-shrink-0 w-20 h-20 rounded-md flex items-center justify-center overflow-hidden bg-slate-50">
+            <Image
+              src={icon}
+              alt={imageAlt ?? company ?? role}
+              width={80}
+              height={80}
+              className="object-contain w-18 h-18"
+              sizes="80px"
+              priority={false}
+            />
+          </div>
+
+          <div className="flex-1 min-w-0">
+            <h3 className="text-slate-900 text-base sm:text-lg font-semibold leading-snug line-clamp-2">{title}</h3>
+            {subtitle ? (
+              <p
+                className={cn(
+                  "mt-1 leading-snug line-clamp-1",
+                  description
+                    ? "text-slate-700 text-xs sm:text-sm"
+                    : "text-slate-900 text-sm sm:text-base font-semibold"
+                )}
+              >
+                {subtitle}
+              </p>
+            ) : null}
+            {duration ? (
+              <p className="mt-1 text-slate-500 text-xs font-medium">{duration}</p>
+            ) : null}
+            <p className="mt-2 text-slate-700 text-xs sm:text-sm leading-relaxed line-clamp-2">
+              {description ?? "\u00A0"}
+            </p>
+          </div>
+        </div>
+      </Card>
+    );
+  }
+
   return (
-    <article className="mb-6 w-full" aria-label={role}>
-      <div className="flex items-center space-x-6 bg-blue-950/20 transition-all duration-300 p-4 sm:p-8 rounded-md min-h-[140px] sm:min-h-[160px]">
-        <div className="flex-shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-lg flex items-center justify-center overflow-hidden">
+    <Card
+      size="sm"
+      className={cn("h-full min-h-[180px] border-slate-200 bg-white", className)}
+      aria-label={role}
+    >
+      <div className="flex h-full items-start gap-5 p-4 sm:p-5">
+        <div className="flex-shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-lg flex items-center justify-center overflow-hidden bg-slate-50">
           <Image
             src={icon}
             alt={imageAlt ?? company ?? role}
-            width={80}
-            height={80}
+            width={96}
+            height={96}
             className="object-contain w-16 h-16 sm:w-20 sm:h-20"
-            style={{ width: "auto", height: "auto" }}
-            sizes="80px"
+            sizes="96px"
             priority={false}
           />
         </div>
-
-        <div className="flex-1 flex flex-col justify-center">
-          {company ? (
+        <div className="min-w-0 flex-1">
+          <h3 className="text-slate-900 text-base sm:text-lg font-semibold leading-snug line-clamp-2">{title}</h3>
+          {subtitle ? (
             <p
-              className="mb-2 sm:p-6 sm:py-1.5 px-4 py-1 rounded-full bg-gray-200 text-gray-600 w-fit sm:text-lg text-sm font-bold justify-center mx-auto whitespace-nowrap overflow-hidden text-ellipsis max-w-full"
-              title={company}
+              className={cn(
+                "mt-1 leading-snug line-clamp-1",
+                description
+                  ? "text-slate-700 text-sm"
+                  : "text-slate-900 text-base sm:text-lg font-semibold"
+              )}
             >
-              {company}
+              {subtitle}
             </p>
-          ) : (
-            <div className="mb-2 h-[28px] sm:h-[36px]" />
-          )}
-
+          ) : null}
           {duration ? (
-            <p className="mb-2 sm:p-6 sm:py-1.5 px-4 py-1 rounded-full bg-gray-100 text-gray-700 w-fit sm:text-md text-xs font-medium flex justify-center mx-auto">
-              {duration}
-            </p>
-          ) : (
-            <div className="mb-2 h-[24px] sm:h-[32px]" />
-          )}
-
-          <h3 className="text-gray-200 text-xl sm:text-2xl font-semibold text-center line-clamp-2">
-            {role}
-          </h3>
-
-          {description ? (
-            <p className="text-gray-200 text-sm sm:text-base pt-3 text-center line-clamp-3">
-              {description}
-            </p>
-          ) : (
-            <div className="pt-3 h-[60px] sm:h-[72px]" />
-          )}
+            <p className="mt-1 text-slate-500 text-xs sm:text-sm font-medium">{duration}</p>
+          ) : null}
+          <p className="mt-3 text-slate-700 text-sm leading-relaxed line-clamp-3">
+            {description ?? "\u00A0"}
+          </p>
         </div>
       </div>
-    </article>
+    </Card>
   );
 }

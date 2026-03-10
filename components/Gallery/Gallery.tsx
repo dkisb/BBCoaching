@@ -20,6 +20,8 @@ export default function Gallery({ t }: { t: GalleryTranslations }) {
     { id: 6, image: "/images/szoke-m.jpeg" },
     { id: 7, image: "/images/martin-head.jpeg" },
     { id: 8, image: "/images/shranziGallery.jpg" },
+    { id: 9, image: "/images/jesoloMartinka.webp" },
+    { id: 10, image: "/images/jesoloMartinka2.jpg" },
   ];
 
   const items = GalleryList.map((it, i) => ({
@@ -29,7 +31,7 @@ export default function Gallery({ t }: { t: GalleryTranslations }) {
 
   return (
     <section id="gallery" className="pt-16 pb-16">
-      <h2 className="text-center text-2xl md:text-4xl xl:text-5xl font-bold text-black">
+      <h2 className="text-center text-2xl md:text-4xl xl:text-5xl font-bold text-slate-900">
         {t.title}
       </h2>
       <GalleryCarouselClient items={items} />

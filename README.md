@@ -50,9 +50,9 @@ To get a local copy up and running, follow these simple steps.
 
 Make sure you have the following installed:
 * Node.js (v20 or higher)
-* pnpm
+* Bun
   ```sh
-  npm install -g pnpm
+  curl -fsSL https://bun.sh/install | bash
   ```
 
 ### Installation
@@ -67,7 +67,7 @@ Make sure you have the following installed:
    ```
 3. Install dependencies
    ```sh
-   pnpm install
+   bun install
    ```
 4. Create a `.env.local` file in the root directory and add your environment variables
    ```env
@@ -75,7 +75,7 @@ Make sure you have the following installed:
    ```
 5. Run the development server
    ```sh
-   pnpm dev
+   bun dev
    ```
 6. Open [http://localhost:3000](http://localhost:3000) in your browser
 

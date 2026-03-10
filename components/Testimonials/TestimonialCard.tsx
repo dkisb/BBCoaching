@@ -1,5 +1,6 @@
 // components/Testimonials/TestimonialCard.tsx
-import Image from "next/image";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export type Testimonial = {
   image: string;
@@ -16,35 +17,36 @@ export default function TestimonialCard({
   description,
   imageAlt,
 }: Testimonial) {
+  const fallback = name
+    .split(" ")
+    .map((part) => part[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+
   return (
-    <article className="m-2" aria-label={`Testimonial by ${name}`}>
-      <div
-        className="w-20 h-20 rounded-full overflow-hidden flex items-center justify-end bg-gray-2 00 mx-auto"
-        style={{
-          aspectRatio: "1 / 1",
-          minWidth: 60,
-          minHeight: 60,
-          maxWidth: 80,
-          maxHeight: 80,
-        }}
-      >
-        <Image
-          src={image}
-          alt={imageAlt ?? name}
-          width={80}
-          height={80}
-          className="object-cover object-top w-full h-full"
-          style={{ width: "auto", height: "auto" }}
-          loading="lazy"
-        />
-      </div>
-
-      <p className="mt-6 text-base text-white font-medium break-words overflow-y-auto max-h-32">
-        “{description}”
-      </p>
-
-      <h3 className="mt-6 text-xl text-[#0055ff] font-bold">{name}</h3>
-      {role ? <p className="mt-1 text-[#0055ff]">{role}</p> : null}
-    </article>
+    <Card
+      size="sm"
+      className="h-[280px] border-slate-200 bg-white flex flex-col"
+      aria-label={`Testimonial by ${name}`}
+    >
+      <CardHeader>
+        <div className="flex items-center gap-3">
+          <Avatar className="size-12 sm:size-14">
+            <AvatarImage src={image} alt={imageAlt ?? name} className="object-cover object-top" />
+            <AvatarFallback>{fallback}</AvatarFallback>
+          </Avatar>
+          <div>
+            <CardTitle className="text-slate-900 text-base sm:text-lg leading-tight">{name}</CardTitle>
+            {role ? <p className="text-sm text-[#7ba8ff]">{role}</p> : null}
+          </div>
+        </div>
+      </CardHeader>
+      <CardContent className="flex-1 min-h-0">
+        <p className="h-full overflow-y-scroll pr-1 text-sm sm:text-base text-slate-700 leading-relaxed">
+          &ldquo;{description}&rdquo;
+        </p>
+      </CardContent>
+    </Card>
   );
 }

@@ -29,8 +29,8 @@ export default function Skills({ t }: { t: SkillsTranslations }) {
   ];
 
   return (
-    <section id="skills" className="text-white pt-16 pb-16">
-      <h2 className="text-center text-2xl md:text-4xl xl:text-5xl font-bold text-black">
+    <section id="skills" className="text-slate-900 pt-16 pb-16">
+      <h2 className="text-center text-2xl md:text-4xl xl:text-5xl font-bold text-slate-900">
         {t.title} <span className="text-[#0055ff]">{t.titleHighlight}</span>
       </h2>
 

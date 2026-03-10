@@ -52,17 +52,17 @@ function LangButton({
 
   const getButtonClasses = () => {
     if (variant === "mobile") {
-      return `flex items-center space-x-2 px-3 py-1 md:px-4 md:py-2 rounded-md text-sm md:text-base font-medium border transition-all ${
+      return `flex items-center justify-center w-12 h-10 md:w-14 md:h-11 rounded-md border transition-all ${
         isActive
-          ? "bg-white text-[#0055ff] border-white cursor-default"
-          : "text-white border-white/50 hover:bg-white/10"
+          ? "bg-white border-white cursor-default"
+          : "border-white/50 hover:bg-white/10"
       }`;
     }
     
-    return `flex items-center space-x-2 px-3 py-1 md:px-4 md:py-2 rounded-md text-sm md:text-base font-medium border transition-all ${
+    return `flex items-center justify-center w-12 h-10 md:w-14 md:h-11 rounded-md border transition-all ${
       isActive
-        ? "bg-[#0055ff] text-white border-[#0055ff] cursor-default pointer-events-none"
-        : "text-black border-gray-200 hover:bg-gray-100"
+        ? "bg-[#0055ff] border-[#0055ff] cursor-default pointer-events-none"
+        : "border-gray-200 hover:bg-gray-100"
     }`;
   };
 
@@ -75,10 +75,10 @@ function LangButton({
       className={getButtonClasses()}
       aria-current={isActive ? "page" : undefined}
       aria-disabled={isActive}
+      aria-label={isActive ? `Current language: ${label}` : `Switch to ${label}`}
       title={isActive ? `Current language: ${label}` : `Switch to ${label}`}
     >
       <Image src={flag} alt={`${label} flag`} width={20} height={20} className="md:w-6 md:h-6" />
-      <span>{label}</span>
     </button>
   );
 }

@@ -42,7 +42,7 @@ export default function Services({ t }: { t: ServicesTranslations }) {
 
   return (
     <section id="services" className="pt-16 pb-16 flex flex-col items-center justify-center">
-      <h2 className="text-center text-2xl md:text-4xl xl:text-5xl font-bold text-black">
+      <h2 className="text-center text-2xl md:text-4xl xl:text-5xl font-bold text-slate-900">
         {t.title} <br /> <span className="text-[#0055ff]">{t.titleHighlight}</span>
       </h2>
 

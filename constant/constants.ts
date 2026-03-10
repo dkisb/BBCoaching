@@ -1,4 +1,4 @@
-import { FaChartLine, FaCar, FaBrain, FaGraduationCap, FaInstagram, FaFacebook, FaTiktok, FaLinkedin, FaVideo, FaTv } from "react-icons/fa"
+import { FaChartLine, FaCar, FaBrain, FaGraduationCap, FaInstagram, FaFacebook, FaTiktok, FaLinkedin, FaTv } from "react-icons/fa"
 import { LuChartNoAxesCombined } from "react-icons/lu"
 
 

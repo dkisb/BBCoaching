@@ -1,46 +1,37 @@
 "use client";
 
-import { useMemo } from "react";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
 import TestimonialCard, { Testimonial } from "./TestimonialCard";
-
-const responsive = {
-  desktop: { breakpoint: { max: 3000, min: 1324 }, items: 3, slidesToSlide: 1 },
-  tablet: { breakpoint: { max: 1324, min: 764 }, items: 2, slidesToSlide: 1 },
-  mobile: { breakpoint: { max: 764, min: 0 }, items: 1, slidesToSlide: 1 },
-};
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export default function TestimonialsCarouselClient({
   items,
 }: {
   items: Testimonial[];
 }) {
-  // Disable autoplay on mobile screens (below 764px)
-  const autoPlay = useMemo(() => {
-    if (typeof window === "undefined") return false;
-    return window.matchMedia?.("(min-width: 764px)").matches;
-  }, []);
-
   return (
-    <div className="mt-16 w-[70%] mx-auto">
-      <Carousel
-        showDots={false}
-        responsive={responsive}
-        infinite
-        autoPlay={autoPlay}
-        autoPlaySpeed={2000}
-      >
-        {items.map((t, idx) => (
-          <TestimonialCard
-            key={`${t.name}-${idx}`}
-            image={t.image}
-            name={t.name}
-            role={t.role}
-            description={t.description}
-            imageAlt={t.imageAlt}
-          />
-        ))}
+    <div className="mt-12 w-[90%] md:w-[85%] lg:w-[78%] mx-auto">
+      <Carousel opts={{ align: "start", loop: true }} className="w-full">
+        <CarouselContent>
+          {items.map((t, idx) => (
+            <CarouselItem key={`${t.name}-${idx}`} className="md:basis-1/2 lg:basis-1/3">
+              <TestimonialCard
+                image={t.image}
+                name={t.name}
+                role={t.role}
+                description={t.description}
+                imageAlt={t.imageAlt}
+              />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious className="-left-5 top-1/2 -translate-y-1/2 bg-white text-black hover:bg-white/90" />
+        <CarouselNext className="-right-5 top-1/2 -translate-y-1/2 bg-white text-black hover:bg-white/90" />
       </Carousel>
     </div>
   );

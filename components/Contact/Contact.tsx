@@ -31,12 +31,12 @@ export default function Contact({ t }: { t: ContactTranslations }) {
       <div className="w-[90%] md:w-[80%] lg:w-[70%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
         {/* text content */}
         <div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-200">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900">
             {t.title} <br />{" "}
             <span className="text-[#0055ff]">{t.titleHighlight}</span>
           </h1>
 
-          <p className="text-white mt-6 text-base sm:text-lg font-bold">
+          <p className="text-slate-900 mt-6 text-base sm:text-lg font-bold">
             {t.description}{" "}
             <span className="text-[#0055ff]">{t.descriptionHighlight}</span>
           </p>
@@ -44,15 +44,15 @@ export default function Contact({ t }: { t: ContactTranslations }) {
           <div className="mt-7">
             <div className="flex items-center space-x-3 mb-4">
               <BiEnvelope className="w-9 h-9 text-[#0055ff]" />
-              <p className="text-white text-xl font-bold">{t.email}</p>
+              <p className="text-slate-900 text-xl font-bold">{t.email}</p>
             </div>
             <div className="flex items-center space-x-3 mb-4">
               <BiPhone className="w-9 h-9 text-[#0055ff]" />
-              <p className="text-white text-xl font-bold">{t.phone}</p>
+              <p className="text-slate-900 text-xl font-bold">{t.phone}</p>
             </div>
             <div className="flex items-center space-x-3 mb-4">
               <BiMap className="w-9 h-9 text-[#0055ff]" />
-              <p className="text-white text-xl font-bold">{t.location}</p>
+              <p className="text-slate-900 text-xl font-bold">{t.location}</p>
             </div>
 
             {/* social media */}

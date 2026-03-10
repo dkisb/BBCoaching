@@ -78,7 +78,7 @@ export default function ContactFormClient({ t }: { t: FormT }) {
     <div
       data-aos="zoom-in"
       data-aos-anchor-placement="top-center"
-      className="md:p-10 p-5 bg-[#131332] rounded-lg"
+      className="md:p-10 p-5 bg-white border border-slate-200 rounded-lg"
     >
       <form onSubmit={handleSubmit} noValidate>
         <label className="sr-only" htmlFor="name">
@@ -91,7 +91,7 @@ export default function ContactFormClient({ t }: { t: FormT }) {
           type="text"
           placeholder={t.name}
           autoComplete="name"
-          className="px-4 py-3.5 bg-[#363659] text-white outline-none rounded-md w-full placeholder:text-white/70"
+          className="px-4 py-3.5 bg-slate-50 border border-slate-200 text-slate-900 outline-none rounded-md w-full placeholder:text-slate-500"
         />
 
         <label className="sr-only" htmlFor="email">
@@ -104,7 +104,7 @@ export default function ContactFormClient({ t }: { t: FormT }) {
           type="email"
           placeholder={t.email}
           autoComplete="email"
-          className="px-4 py-3.5 mt-6 bg-[#363659] text-white outline-none rounded-md w-full placeholder:text-white/70"
+          className="px-4 py-3.5 mt-6 bg-slate-50 border border-slate-200 text-slate-900 outline-none rounded-md w-full placeholder:text-slate-500"
           suppressHydrationWarning
         />
 
@@ -118,7 +118,7 @@ export default function ContactFormClient({ t }: { t: FormT }) {
           type="tel"
           placeholder={t.phone}
           autoComplete="tel"
-          className="px-4 py-3.5 mt-6 bg-[#363659] text-white outline-none rounded-md w-full placeholder:text-white/70"
+          className="px-4 py-3.5 mt-6 bg-slate-50 border border-slate-200 text-slate-900 outline-none rounded-md w-full placeholder:text-slate-500"
         />
 
         <label className="sr-only" htmlFor="message">
@@ -129,7 +129,7 @@ export default function ContactFormClient({ t }: { t: FormT }) {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder={t.message}
-          className="px-4 py-3.5 mt-6 bg-[#363659] text-white outline-none rounded-md w-full placeholder:text-white/70 h-[10rem]"
+          className="px-4 py-3.5 mt-6 bg-slate-50 border border-slate-200 text-slate-900 outline-none rounded-md w-full placeholder:text-slate-500 h-[10rem]"
         />
 
         <button

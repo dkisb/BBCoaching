@@ -45,18 +45,11 @@ export default function Testimonials({ t }: { t: TestimonialsTranslations }) {
       description: t.list.kristyna,
       imageAlt: "Kristýna Kalistová",
     },
-    {
-      image: "/images/hero2.jpg",
-      name: "Döme Kisbalázs",
-      role: t.simRacer,
-      description: t.list.dome,
-      imageAlt: "Döme Kisbalázs",
-    }
   ];
 
   return (
     <section id="testimonials" className="pt-16 pb-16">
-      <h2 className="text-center text-2xl md:text-4xl xl:text-5xl font-bold text-white">
+      <h2 className="text-center text-2xl md:text-4xl xl:text-5xl font-bold text-slate-900">
         {t.title} <span className="text-[#0055ff]">{t.titleHighlight}</span>
       </h2>
 

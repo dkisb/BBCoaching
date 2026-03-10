@@ -52,7 +52,7 @@ export default function Experiences({ t }: { t: ExperiencesTranslations }) {
 
   return (
     <section id="experiences" className="pt-16 pb-16">
-      <h2 className="text-center text-2xl md:text-4xl xl:text-5xl font-bold text-white">
+      <h2 className="text-center text-2xl md:text-4xl xl:text-5xl font-bold text-slate-900">
         {t.title} <br />{" "}
         <span className="text-[#0055ff]">{t.titleHighlight}</span>
       </h2>

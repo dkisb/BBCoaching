@@ -1,9 +1,16 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { Button } from "@/components/ui/button";
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 
 type GalleryItem = {
   id: number;
@@ -11,76 +18,12 @@ type GalleryItem = {
   alt: string;
 };
 
-const responsive = {
-  desktopXL: { breakpoint: { max: 3000, min: 1536 }, items: 3, slidesToSlide: 1 },
-  desktopL: { breakpoint: { max: 1536, min: 1280 }, items: 3, slidesToSlide: 1 },
-  desktopM: { breakpoint: { max: 1280, min: 1024 }, items: 3, slidesToSlide: 1 },
-  desktopS: { breakpoint: { max: 1024, min: 768 }, items: 2, slidesToSlide: 1 },
-  tablet: { breakpoint: { max: 768, min: 640 }, items: 1, slidesToSlide: 1 },
-  mobile: { breakpoint: { max: 640, min: 0 }, items: 1, slidesToSlide: 1 },
-};
-
-function ArrowButton({
-  onClick,
-  disabled,
-  direction,
-}: {
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
-  disabled?: boolean;
-  direction: "left" | "right";
-}) {
-  return (
-    <button
-      type="button"
-      aria-label={direction === "left" ? "Previous" : "Next"}
-      onClick={onClick}
-      disabled={disabled}
-      className={`react-multi-carousel-arrow react-multi-carousel-arrow--${direction} hover:bg-black/80 transition-all`}
-      style={{
-        position: "absolute",
-        [direction]: "0",
-        top: "50%",
-        transform: "translateY(-50%)",
-        zIndex: 2,
-        background: "rgba(0,0,0,0.6)",
-        border: "none",
-        borderRadius: "50%",
-        width: 45,
-        height: 45,
-        color: "white",
-        fontSize: 26,
-        cursor: "pointer",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      } as React.CSSProperties}
-    >
-      {direction === "left" ? "←" : "→"}
-    </button>
-  );
-}
-
 export default function GalleryCarouselClient({
   items,
 }: {
   items: GalleryItem[];
 }) {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-
-  // Disable autoplay on narrow screens without resize listeners
-  const autoPlay = useMemo(() => {
-    if (typeof window === "undefined") return true;
-    return window.matchMedia?.("(min-width: 764px)").matches;
-  }, []);
-
-  const arrowProps =
-    expandedIndex !== null
-      ? { arrows: false, customLeftArrow: <></>, customRightArrow: <></> }
-      : {
-          arrows: true,
-          customLeftArrow: <ArrowButton direction="left" />,
-          customRightArrow: <ArrowButton direction="right" />,
-        };
 
   const goPrev = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
@@ -98,44 +41,34 @@ export default function GalleryCarouselClient({
 
   return (
     <>
-      <div className="w-full max-w-[1400px] mx-auto mt-20 px-16 sm:px-20 md:px-24 lg:px-28 relative">
-        <Carousel
-          showDots={false}
-          responsive={responsive}
-          infinite={true}
-          autoPlay={autoPlay}
-          autoPlaySpeed={2000}
-          keyBoardControl
-          transitionDuration={500}
-          itemClass="px-3 sm:px-4 md:px-5 lg:px-6"
-          swipeable
-          draggable
-          ssr
-          shouldResetAutoplay={false}
-          {...arrowProps}
-        >
-          {items.map((g, i) => (
-            <button
-              key={g.id}
-              className="flex justify-center items-center cursor-pointer"
-              onClick={() => setExpandedIndex(i)}
-              type="button"
-              aria-label={`Open image ${i + 1}`}
-              style={{ background: "transparent", border: "none", padding: 0 }}
-            >
-              <div className="relative w-[280px] h-[280px] sm:w-[300px] sm:h-[300px] md:w-[320px] md:h-[320px] xl:w-[350px] xl:h-[350px] overflow-hidden shadow-lg">
-                <Image
-                  src={g.image}
-                  alt={g.alt}
-                  fill
-                  style={{ objectFit: "contain" }}
-                  className=""
-                  sizes="(max-width: 640px) 280px, (max-width: 764px) 300px, (max-width: 1324px) 320px, 350px"
-                  priority={i === 0}
-                />
-              </div>
-            </button>
-          ))}
+      <div className="mt-12 w-[90%] md:w-[85%] lg:w-[78%] mx-auto relative">
+        <Carousel opts={{ align: "start", loop: true }} className="w-full">
+          <CarouselContent>
+            {items.map((g, i) => (
+              <CarouselItem key={g.id} className="md:basis-1/2 lg:basis-1/3">
+                <button
+                  className="flex justify-center items-center cursor-pointer w-full"
+                  onClick={() => setExpandedIndex(i)}
+                  type="button"
+                  aria-label={`Open image ${i + 1}`}
+                  style={{ background: "transparent", border: "none", padding: 0 }}
+                >
+                  <div className="relative w-[280px] h-[280px] sm:w-[300px] sm:h-[300px] md:w-[320px] md:h-[320px] xl:w-[350px] xl:h-[350px] overflow-hidden shadow-lg">
+                    <Image
+                      src={g.image}
+                      alt={g.alt}
+                      fill
+                      style={{ objectFit: "contain" }}
+                      sizes="(max-width: 640px) 280px, (max-width: 764px) 300px, (max-width: 1324px) 320px, 350px"
+                      priority={i === 0}
+                    />
+                  </div>
+                </button>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="-left-5 top-1/2 -translate-y-1/2 bg-white text-black hover:bg-white/90" />
+          <CarouselNext className="-right-5 top-1/2 -translate-y-1/2 bg-white text-black hover:bg-white/90" />
         </Carousel>
       </div>
 
@@ -159,26 +92,24 @@ export default function GalleryCarouselClient({
             >
               ×
             </button>
-            {/* Prev */}
-            <button
-              className="absolute top-1/2 left-0 -translate-y-1/2 text-white text-4xl font-bold bg-black/50 rounded-full w-12 h-12 flex items-center justify-center hover:bg-black/80 transition z-10"
-              onClick={goPrev}
+            <Button
+              type="button"
               aria-label="Previous"
-              type="button"
-              style={{ left: "-3rem" }}
+              size="icon-sm"
+              className="absolute top-1/2 -left-12 -translate-y-1/2 rounded-full bg-white text-black hover:bg-white/90 z-10"
+              onClick={goPrev}
             >
-              ←
-            </button>
-            {/* Next */}
-            <button
-              className="absolute top-1/2 right-0 -translate-y-1/2 text-white text-4xl font-bold bg-black/50 rounded-full w-12 h-12 flex items-center justify-center hover:bg-black/80 transition z-10"
-              onClick={goNext}
+              <ChevronLeftIcon />
+            </Button>
+            <Button
+              type="button"
               aria-label="Next"
-              type="button"
-              style={{ right: "-3rem" }}
+              size="icon-sm"
+              className="absolute top-1/2 -right-12 -translate-y-1/2 rounded-full bg-white text-black hover:bg-white/90 z-10"
+              onClick={goNext}
             >
-              →
-            </button>
+              <ChevronRightIcon />
+            </Button>
 
             <div className="relative w-[90vw] max-w-[800px] h-[80vh] flex items-center justify-center">
               <Image
