@@ -138,19 +138,13 @@ export const ContactList = [
     {
         id: 2,
         name: "facebook",
-        url: "https://www.facebook.com/robinagyker/",
+        url: "https://www.facebook.com/profile.php?id=100017095442877",
         icon: FaFacebook,
     },
     {
         id: 3,
-        name: "tiktok",
-        url: "https://www.tiktok.com/robinagyker/",
-        icon: FaTiktok,
-    },
-    {
-        id: 4,
         name: "linkedin",
-        url: "https://www.linkedin.com/in/döme-marcell-kisbalázs",
+        url: "https://www.linkedin.com/in/bors-bertold-930036390/",
         icon: FaLinkedin,
     }
 ]
