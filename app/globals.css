@@ -8,14 +8,16 @@ html {
 }
 
 :root {
+  --color-brand: #0046e0;
+  --color-brand-foreground: #ffffff;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
+  --primary: var(--color-brand);
+  --primary-foreground: var(--color-brand-foreground);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
@@ -77,6 +79,8 @@ html {
 }
 
 @theme inline {
+  --color-brand: var(--color-brand);
+  --color-brand-foreground: var(--color-brand-foreground);
   --font-sans: var(--font-sans);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -127,5 +131,20 @@ html {
   }
   html {
     @apply font-sans;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-6xl mx-auto px-6;
+  }
+  .section-eyebrow {
+    @apply text-xs font-semibold uppercase tracking-widest text-brand;
+  }
+  .section-heading {
+    @apply text-3xl sm:text-4xl xl:text-5xl font-bold tracking-tight text-slate-950;
+  }
+  .surface-card {
+    @apply bg-white border border-slate-200 rounded-2xl shadow-sm transition-shadow hover:shadow-md;
   }
 }

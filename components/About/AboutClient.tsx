@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-scroll";
+import { Button } from "@/components/ui/button";
 
 type Props = {
   ctaText: string;
@@ -21,15 +22,15 @@ export default function AboutClient({ ctaText }: Props) {
 
   return (
     <div data-aos="zoom-in" data-aos-anchor-placement="top-center">
-      <Link
-        to="contact"
-        smooth={true}
-        duration={800}
-        offset={-100}
-        className="inline-block mt-8 px-10 py-4 bg-[#0055ff] hover:bg-blue-900 transition-all duration-300 cursor-pointer rounded-full text-white"
+      <Button
+        asChild
+        size="lg"
+        className="mt-8 rounded-lg bg-brand text-brand-foreground hover:bg-brand/90 h-12 px-8 text-base"
       >
-        {ctaText}
-      </Link>
+        <Link to="contact" smooth={true} duration={800} offset={-100} className="cursor-pointer">
+          {ctaText}
+        </Link>
+      </Button>
     </div>
   );
 }

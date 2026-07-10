@@ -6,7 +6,6 @@
 "nav": {
 "home": "Kezdőlap",
 "about": "Rólam",
-"experiences": "Tapasztalatok",
 "services": "Szolgáltatások",
 "testimonials": "Vélemények",
 "gallery": "Galéria",
@@ -14,18 +13,27 @@
 "bookCall": "Időpont foglalás"
 },
 "hero": {
+"eyebrow": "Professzionális Versenyzői Képzés",
 "title": "A jövő bajnokainak",
 "titleHighlight": "fejlesztése",
 "subtitle": "Helló! Bertold vagyok - a BB Coaching alapítója",
 "partnerPrefix": "",
 "partnerSuffix": "hivatalos partnere",
-"readMore": "Többet"
+"readMore": "Ingyenes konzultáció foglalása",
+"secondaryCta": "Szolgáltatások megtekintése",
+"stat1Title": "10+",
+"stat1Description": "Év a motorsportban",
+"stat2Title": "6+",
+"stat2Description": "Bajnoki eredmény",
+"stat3Title": "1-on-1",
+"stat3Description": "Személyre szabott edzés"
 },
 "about": {
+"eyebrow": "Magamról",
 "title": "A",
 "titleHighlight": "BB Coaching-ról",
 "paragraph1": "Bertold vagyok, országos bajnok és driver coach, aki szenvedélyesen segíti a versenyzőket teljes potenciáljuk elérésében. A telemetria elemzés, verseny adatok és valós versenyzési tapasztalat kombinálásával strukturált edzést nyújtok, ami javítja a köridőket, versenyképességet és a versenyző következetességét.",
-"paragraph2": "A fókuszom a versenyzők fejlesztése a motorsport minden szintjén - az erős alapok lefektetésétől a junior kategóriától, egészen a tapasztalt versenyzők győzelemért való hajszáig. Egy holisztikus megközelítéssel, ami magában foglalja a jármű beállítását, adatelemzést valamint értékelést és mentális felkészítést, megadom a versenyzőknek azt a előnyt, amivel elérhetnek a dobogó legfelső fokára.",
+"paragraph2": "A fókuszom a versenyzők fejlesztése a motorsport minden szintjén. Az erős alapok lefektetésétől a junior kategóriától, egészen a tapasztalt versenyzők győzelemért való hajszáig. Egy holisztikus megközelítéssel, ami magában foglalja a jármű beállítását, adatelemzést valamint értékelést és mentális felkészítést, megadom a versenyzőknek azt a előnyt, amivel elérhetnek a dobogó legfelső fokára.",
 "stat1Title": "Több mint egy évtized",
 "stat1Description": "A motorsportban",
 "stat2Title": "Adatvezérelt",
@@ -33,6 +41,8 @@
 "getInTouch": "Lépj kapcsolatba"
 },
 "services": {
+"eyebrow": "Amit Kínálok",
+"intro": "Strukturált, adatvezérelt edzés azokra a területekre fókuszálva, amik a legtöbbet számítanak a köridőben.",
 "title": "Segítek a versenyzőknek",
 "titleHighlight": "elérni teljes potenciáljukat",
 "performanceAnalysis": {
@@ -49,23 +59,26 @@
 }
 },
 "skills": {
-"title": "Készségeim és",
-"titleHighlight": "Képességeim",
 "performanceAnalysis": "Teljesítmény Elemzés",
 "vehicleSetup": "Jármű Beállítás",
 "dataVideoAnalysis": "Adat és Videó Elemzés",
 "driverDevelopment": "Versenyző Fejlesztés"
 },
 "resume": {
-"workExperience": "Munka",
-"workExperienceHighlight": "Tapasztalataim",
-"achievementsTitle": "Személyes",
-"achievementsHighlight": "Eredményeim",
+"eyebrow": "Karrier és Eredmények",
+"title": "Tapasztalat",
+"titleHighlight": "és Eredmények",
+"tags": {
+"work": "Munka",
+"achievement": "Eredmény"
+},
+"showMore": "Teljes idővonal megtekintése",
+"showLess": "Kevesebb megjelenítése",
 "jobs": {
 "tms": {
 "role": "Teljesítmény Elemző",
 "company": "Top Motorsport Karting Csapat",
-"duration": "2021 - Jelen"
+"duration": "2021 - 2025"
 },
 "bdp": {
 "role": "Versenyző Edző és Szerelő",
@@ -83,8 +96,6 @@
 "duration": "2025 - Jelen"
 }
 },
-"achievementsTitle": "",
-"achievementsHighlight": "Eredményeim",
 "achievements": {
 "rookie": {
 "role": "Magyar Év Újonca",
@@ -115,17 +126,8 @@
 }
 }
 },
-"experiences": {
-"title": "Néhány a legutóbbi",
-"titleHighlight": "munka tapasztalataimból",
-"list": {
-"nationalChampion": "Magyar Országos Gokart Bajnok",
-"ceeChampionship": "CEE Gokart Európa Bajnokság 3. hely",
-"bdpChampionships": "Több bajnokság edzőként és szerelőként a BDP-vel",
-"rallyCross": "Debütáló versenyem megnyerése a Magyar RallyCross Bajnokságban"
-}
-},
 "testimonials": {
+"eyebrow": "Vélemények",
 "title": "Kedves szavak korábbi",
 "titleHighlight": "ügyfelektől",
 "role": "Versenyző",
@@ -139,7 +141,9 @@
 }
 },
 "gallery": {
-"title": "Galéria"
+"eyebrow": "Pályán",
+"title": "Galéria",
+"intro": "Bepillantás a versenyekbe, dobogókba és pályanapokba az eredmények mögött."
 },
 "contact": {
 "title": "Foglalj időpontot velem",
@@ -160,9 +164,12 @@
 "errorRequired": "Kérlek töltsd ki a neved, email címed és üzeneted.",
 "errorInvalidEmail": "Kérlek adj meg egy érvényes email címet.",
 "errorGeneric": "Nem sikerült elküldeni az üzenetet"
-}
+},
+"trustNote": "Ingyenes, 15 perces konzultáció. Nincs kötelezettség. Általában 24 órán belül válaszolok."
 },
 "footer": {
-"copyright": "Copyright © 2025 BB Coaching. Minden jog fenntartva."
+"copyright": "Copyright © {year} BB Coaching. Minden jog fenntartva.",
+"tagline": "Adatvezérelt versenyzői edzés, hogy megtaláld a pályán rejlő minden tizedmásodpercet.",
+"cta": "Ingyenes konzultáció foglalása"
 }
 }

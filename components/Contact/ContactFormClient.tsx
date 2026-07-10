@@ -4,6 +4,7 @@
 import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Button } from "@/components/ui/button";
 
 type FormT = {
   name: string;
@@ -16,7 +17,11 @@ type FormT = {
   errorRequired: string;
   errorInvalidEmail: string;
   errorGeneric: string;
+  trustNote: string;
 };
+
+const inputClass =
+  "px-4 py-3.5 bg-white border border-slate-200 text-slate-900 outline-none rounded-lg w-full placeholder:text-slate-400 focus:ring-2 focus:ring-brand focus:border-brand transition-shadow";
 
 export default function ContactFormClient({ t }: { t: FormT }) {
   const [name, setName] = useState("");
@@ -78,7 +83,7 @@ export default function ContactFormClient({ t }: { t: FormT }) {
     <div
       data-aos="zoom-in"
       data-aos-anchor-placement="top-center"
-      className="md:p-10 p-5 bg-white border border-slate-200 rounded-lg"
+      className="md:p-10 p-6 surface-card"
     >
       <form onSubmit={handleSubmit} noValidate>
         <label className="sr-only" htmlFor="name">
@@ -91,7 +96,7 @@ export default function ContactFormClient({ t }: { t: FormT }) {
           type="text"
           placeholder={t.name}
           autoComplete="name"
-          className="px-4 py-3.5 bg-slate-50 border border-slate-200 text-slate-900 outline-none rounded-md w-full placeholder:text-slate-500"
+          className={inputClass}
         />
 
         <label className="sr-only" htmlFor="email">
@@ -104,7 +109,7 @@ export default function ContactFormClient({ t }: { t: FormT }) {
           type="email"
           placeholder={t.email}
           autoComplete="email"
-          className="px-4 py-3.5 mt-6 bg-slate-50 border border-slate-200 text-slate-900 outline-none rounded-md w-full placeholder:text-slate-500"
+          className={`${inputClass} mt-4`}
           suppressHydrationWarning
         />
 
@@ -118,7 +123,7 @@ export default function ContactFormClient({ t }: { t: FormT }) {
           type="tel"
           placeholder={t.phone}
           autoComplete="tel"
-          className="px-4 py-3.5 mt-6 bg-slate-50 border border-slate-200 text-slate-900 outline-none rounded-md w-full placeholder:text-slate-500"
+          className={`${inputClass} mt-4`}
         />
 
         <label className="sr-only" htmlFor="message">
@@ -129,27 +134,27 @@ export default function ContactFormClient({ t }: { t: FormT }) {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder={t.message}
-          className="px-4 py-3.5 mt-6 bg-slate-50 border border-slate-200 text-slate-900 outline-none rounded-md w-full placeholder:text-slate-500 h-[10rem]"
+          className={`${inputClass} mt-4 h-[10rem] resize-none`}
         />
 
-        <button
+        <Button
           type="submit"
           disabled={loading}
-          className="mt-8 px-12 py-4 bg-[#0055ff] hover:bg-blue-900 disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-300 cursor-pointer rounded-full text-white"
-          aria-live="polite"
+          size="lg"
+          className="mt-6 w-full sm:w-auto rounded-lg bg-brand text-brand-foreground hover:bg-brand/90 h-12 px-10 text-base"
         >
-          <span className="text-white">
-            {loading ? t.sending : t.send}
-          </span>
-        </button>
+          {loading ? t.sending : t.send}
+        </Button>
+
+        <p className="mt-4 text-sm text-slate-500">{t.trustNote}</p>
 
         {errorMsg && (
-          <p className="text-red-400 mt-4" role="alert">
+          <p className="text-red-600 mt-4" role="alert">
             {errorMsg}
           </p>
         )}
         {success && (
-          <p className="text-green-400 mt-4" role="status">
+          <p className="text-emerald-600 mt-4" role="status">
             {t.success}
           </p>
         )}

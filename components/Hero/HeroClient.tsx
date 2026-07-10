@@ -5,13 +5,14 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-scroll";
-import { BsArrowDownShort } from "react-icons/bs";
+import { Button } from "@/components/ui/button";
 
 type Props = {
   ctaText: string;
+  secondaryCtaText: string;
 };
 
-export default function HeroClient({ ctaText }: Props) {
+export default function HeroClient({ ctaText, secondaryCtaText }: Props) {
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -22,22 +23,26 @@ export default function HeroClient({ ctaText }: Props) {
   }, []);
 
   return (
-    <>
-      <div data-aos="fade-up" />
-      <div data-aos="fade-up" data-aos-delay="200" />
-      <div data-aos="fade-up" data-aos-delay="400" />
-      <Link
-        to="about"
-        smooth={true}
-        duration={1000}
-        offset={-100}
-        data-aos="fade-up"
-        data-aos-delay="600"
-        className="mt-6 px-10 py-4 bg-[#0055ff] hover:bg-blue-900 transition-all duration-300 cursor-pointer rounded-full text-lg font-medium"
+    <div data-aos="fade-up" className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full max-w-md sm:max-w-none">
+      <Button
+        asChild
+        size="lg"
+        className="rounded-lg bg-brand text-brand-foreground hover:bg-brand/90 h-12 px-8 text-base"
       >
-        <span className="text-white">{ctaText}</span>
-        <BsArrowDownShort className="w-5 h-5 ml-2 inline-block text-white" />
-      </Link>
-    </>
+        <Link to="contact" smooth={true} duration={800} offset={-100} className="cursor-pointer">
+          {ctaText}
+        </Link>
+      </Button>
+      <Button
+        asChild
+        variant="outline"
+        size="lg"
+        className="rounded-lg border-slate-300 h-12 px-8 text-base"
+      >
+        <Link to="services" smooth={true} duration={800} offset={-100} className="cursor-pointer">
+          {secondaryCtaText}
+        </Link>
+      </Button>
+    </div>
   );
 }

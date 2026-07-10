@@ -2,9 +2,11 @@
 
 import React from "react";
 import { CgClose } from "react-icons/cg";
+import { PiPhone } from "react-icons/pi";
 import { useTranslations } from "next-intl";
 import { smoothScrollTo } from "../../helper";
 import LanguageSwitcher from "@/components/LanguageSwitcher/LanguageSwitcher";
+import { Button } from "@/components/ui/button";
 
 type Props = {
   showNav: boolean;
@@ -17,11 +19,10 @@ export default function MobileNav({ showNav, closeNav }: Props) {
   const navLinks = [
     { id: 1, url: "#home", label: t("home") },
     { id: 2, url: "#about", label: t("about") },
-    { id: 3, url: "#experiences", label: t("experiences") },
-    { id: 4, url: "#services", label: t("services") },
-    { id: 5, url: "#testimonials", label: t("testimonials") },
-    { id: 6, url: "#gallery", label: t("gallery") },
-    { id: 7, url: "#contact", label: t("contact") },
+    { id: 3, url: "#services", label: t("services") },
+    { id: 4, url: "#testimonials", label: t("testimonials") },
+    { id: 5, url: "#gallery", label: t("gallery") },
+    { id: 6, url: "#contact", label: t("contact") },
   ];
 
   const navOpen = showNav ? "translate-x-0" : "translate-x-[100%]";
@@ -29,19 +30,19 @@ export default function MobileNav({ showNav, closeNav }: Props) {
   return (
     <div>
       <div
-        className={`fixed inset-0 ${navOpen} transform transition-all duration-500 z-[100002] bg-black/70 w-full h-screen`}
+        className={`fixed inset-0 ${navOpen} transform transition-all duration-500 z-[100002] bg-slate-950/40 w-full h-screen`}
         onClick={closeNav}
         aria-hidden={!showNav}
       />
       <nav
         aria-label="Mobile"
-        className={`text-white ${navOpen} fixed justify-center flex flex-col h-full transform transition-all duration-500 delay-300 w-[80%] sm:w-[60%] bg-[#0055ff] space-y-6 z-[100005] right-0`}
+        className={`${navOpen} fixed justify-center flex flex-col h-full transform transition-all duration-500 delay-300 w-[80%] sm:w-[60%] bg-white shadow-2xl space-y-6 z-[100005] right-0`}
         role="dialog"
         aria-modal="true"
       >
         <button
           onClick={closeNav}
-          className="absolute top-[0.7rem] right-[1.4rem] sm:w-8 sm:h-8 w-6 h-6"
+          className="absolute top-[1.2rem] right-[1.4rem] sm:w-8 sm:h-8 w-6 h-6 text-slate-900"
           aria-label="Close menu"
           type="button"
         >
@@ -64,13 +65,33 @@ export default function MobileNav({ showNav, closeNav }: Props) {
                 }}
                 className="block"
               >
-                <span className="text-white w-fit text-xl ml-12 border-b-[1.5px] border-white sm:text-[30px]">
+                <span className="text-slate-900 w-fit text-xl ml-12 border-b-2 border-transparent hover:border-brand sm:text-2xl font-medium">
                   {link.label}
                 </span>
               </a>
             </li>
           ))}
         </ul>
+
+        <div className="px-12 pt-4">
+          <Button
+            asChild
+            size="lg"
+            className="w-full rounded-lg bg-brand text-brand-foreground hover:bg-brand/90"
+          >
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                smoothScrollTo("contact", { offset: -80, duration: 500 });
+                closeNav();
+              }}
+            >
+              <PiPhone className="w-5 h-5" />
+              <span>{t("bookCall")}</span>
+            </a>
+          </Button>
+        </div>
       </nav>
     </div>
   );

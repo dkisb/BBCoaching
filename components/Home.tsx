@@ -2,13 +2,12 @@
 import Hero from "./Hero/Hero";
 import Services from "./Services/Services";
 import Resume from "./Resume/Resume";
-import Experiences from "./Experiences/Experiences";
-import Skills from "./Skills/Skills";
 import Testimonials from "./Testimonials/Testimonials";
 import Contact from "./Contact/Contact";
 import About from "./About/About";
 import Gallery from "./Gallery/Gallery";
 import { Separator } from "@/components/ui/separator";
+import StickyMobileCTA from "./common/StickyMobileCTA";
 import type { Messages } from "@/types/messages";
 
 export default function Home({
@@ -17,50 +16,41 @@ export default function Home({
   t: Messages;
 }) {
   return (
-    <div id="home" className="overflow-hidden bg-[#f8fafc]">
-      <div className="bg-[#eef2ff]">
-        <Hero t={t.hero} />
-      </div>
-      <Separator className="bg-slate-300/40" />
+    <>
+      <div id="home" className="overflow-hidden bg-white">
+        <div className="bg-gradient-to-b from-blue-50/70 via-white to-white">
+          <Hero t={t.hero} />
+        </div>
+        <Separator className="bg-slate-200" />
 
-      <div className="bg-[#f8fafc]">
-        <About t={t.about} />
-      </div>
-      <Separator className="bg-slate-300/40" />
+        <section id="about" className="bg-white py-20 sm:py-28">
+          <div className="section-container grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <About t={t.about} />
+            <Resume t={t.resume} />
+          </div>
+        </section>
+        <Separator className="bg-slate-200" />
 
-      <div className="bg-[#eef2ff]">
-        <Resume t={t.resume} />
-      </div>
-      <Separator className="bg-slate-300/40" />
+        <div className="bg-gradient-to-b from-blue-50/60 via-blue-50/20 to-white">
+          <Services t={t.services} skills={t.skills} />
+        </div>
+        <Separator className="bg-slate-200" />
 
-      <div className="bg-[#f8fafc]">
-        <Experiences t={t.experiences} />
-      </div>
-      <Separator className="bg-slate-300/40" />
+        <div className="bg-white">
+          <Testimonials t={t.testimonials} />
+        </div>
+        <Separator className="bg-slate-200" />
 
-      <div className="bg-[#eef2ff]">
-        <Skills t={t.skills} />
-      </div>
-      <Separator className="bg-slate-300/40" />
+        <div className="bg-slate-50">
+          <Gallery t={t.gallery} />
+        </div>
+        <Separator className="bg-slate-200" />
 
-      <div className="bg-[#f8fafc]">
-        <Services t={t.services} />
+        <div className="bg-gradient-to-b from-white to-blue-50/50">
+          <Contact t={t.contact} />
+        </div>
       </div>
-      <Separator className="bg-slate-300/40" />
-
-      <div className="bg-[#eef2ff]">
-        <Testimonials t={t.testimonials} />
-      </div>
-      <Separator className="bg-slate-300/40" />
-
-      <div className="bg-[#f8fafc]">
-        <Gallery t={t.gallery} />
-      </div>
-      <Separator className="bg-slate-300/40" />
-
-      <div className="bg-[#eef2ff]">
-        <Contact t={t.contact} />
-      </div>
-    </div>
+      <StickyMobileCTA />
+    </>
   );
 }

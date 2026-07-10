@@ -1,7 +1,9 @@
 import GalleryCarouselClient from "./GalleryClientCarousel";
 
 export type GalleryTranslations = {
+  eyebrow: string;
   title: string;
+  intro: string;
 };
 
 type GalleryItem = {
@@ -30,10 +32,12 @@ export default function Gallery({ t }: { t: GalleryTranslations }) {
   }));
 
   return (
-    <section id="gallery" className="pt-16 pb-16">
-      <h2 className="text-center text-2xl md:text-4xl xl:text-5xl font-bold text-slate-900">
-        {t.title}
-      </h2>
+    <section id="gallery" className="py-20 sm:py-28">
+      <div className="section-container flex flex-col items-center">
+        <span className="section-eyebrow">{t.eyebrow}</span>
+        <h2 className="mt-4 text-center section-heading">{t.title}</h2>
+        <p className="mt-5 text-center text-slate-600 text-lg max-w-2xl">{t.intro}</p>
+      </div>
       <GalleryCarouselClient items={items} />
     </section>
   );

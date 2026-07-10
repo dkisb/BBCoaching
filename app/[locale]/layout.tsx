@@ -90,7 +90,17 @@ export default async function RootLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ResponsiveNav />
           {children}
-          <Footer t={messages?.footer ?? { copyright: "Copyright {year} BB Coaching Professional Motorsport Coaching by Bertold Bors" }} />
+          <Footer
+            footer={
+              messages?.footer ?? {
+                copyright: "Copyright {year} BB Coaching Professional Motorsport Coaching by Bertold Bors",
+                tagline: "",
+                cta: "Book a call",
+              }
+            }
+            nav={messages?.nav}
+            contact={messages?.contact}
+          />
           <Analytics />
         </NextIntlClientProvider>
       </body>

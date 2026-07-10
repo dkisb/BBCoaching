@@ -1,5 +1,4 @@
-// components/Contact/Contact.tsx
-import { BiEnvelope, BiMap, BiPhone } from "react-icons/bi";
+import { Mail, MapPin, Phone } from "lucide-react";
 import ContactFormClient from "./ContactFormClient";
 import { ContactList } from "@/constant/constants";
 
@@ -22,51 +21,58 @@ export type ContactTranslations = {
     errorRequired: string;
     errorInvalidEmail: string;
     errorGeneric: string;
+    trustNote: string;
   };
 };
 
 export default function Contact({ t }: { t: ContactTranslations }) {
   return (
-    <section id="contact" className="pt-16 pb-16">
-      <div className="w-[90%] md:w-[80%] lg:w-[70%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
+    <section id="contact" className="py-20 sm:py-28">
+      <div className="section-container grid grid-cols-1 lg:grid-cols-2 gap-12">
         {/* text content */}
         <div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900">
+          <h2 className="section-heading">
             {t.title} <br />{" "}
-            <span className="text-[#0055ff]">{t.titleHighlight}</span>
-          </h1>
+            <span className="text-brand">{t.titleHighlight}</span>
+          </h2>
 
-          <p className="text-slate-900 mt-6 text-base sm:text-lg font-bold">
+          <p className="text-slate-600 mt-6 text-base sm:text-lg">
             {t.description}{" "}
-            <span className="text-[#0055ff]">{t.descriptionHighlight}</span>
+            <span className="font-semibold text-slate-950">{t.descriptionHighlight}</span>
           </p>
 
-          <div className="mt-7">
-            <div className="flex items-center space-x-3 mb-4">
-              <BiEnvelope className="w-9 h-9 text-[#0055ff]" />
-              <p className="text-slate-900 text-xl font-bold">{t.email}</p>
-            </div>
-            <div className="flex items-center space-x-3 mb-4">
-              <BiPhone className="w-9 h-9 text-[#0055ff]" />
-              <p className="text-slate-900 text-xl font-bold">{t.phone}</p>
-            </div>
-            <div className="flex items-center space-x-3 mb-4">
-              <BiMap className="w-9 h-9 text-[#0055ff]" />
-              <p className="text-slate-900 text-xl font-bold">{t.location}</p>
+          <div className="mt-8 space-y-3">
+            <a
+              href={`mailto:${t.email}`}
+              className="flex items-center gap-3 surface-card px-5 py-4 hover:shadow-md"
+            >
+              <Mail className="w-5 h-5 text-brand shrink-0" aria-hidden="true" />
+              <p className="text-slate-800 font-medium">{t.email}</p>
+            </a>
+            <a
+              href={`tel:${t.phone.replace(/\s+/g, "")}`}
+              className="flex items-center gap-3 surface-card px-5 py-4 hover:shadow-md"
+            >
+              <Phone className="w-5 h-5 text-brand shrink-0" aria-hidden="true" />
+              <p className="text-slate-800 font-medium">{t.phone}</p>
+            </a>
+            <div className="flex items-center gap-3 surface-card px-5 py-4">
+              <MapPin className="w-5 h-5 text-brand shrink-0" aria-hidden="true" />
+              <p className="text-slate-800 font-medium">{t.location}</p>
             </div>
 
             {/* social media */}
-            <div className="flex items-center mt-8 space-x-3">
+            <div className="flex items-center pt-4 space-x-3">
               {ContactList.map((item) => (
                 <a
                   key={item.id}
                   href={item.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-14 h-14 bg-[#0055ff] rounded-full flex items-center justify-center cursor-pointer hover:bg-blue-800 transition-all duration-300"
+                  className="w-12 h-12 bg-brand rounded-full flex items-center justify-center cursor-pointer hover:bg-brand/90 transition-colors"
                   aria-label={item.name ?? "Social link"}
                 >
-                  <item.icon className="w-6 h-6 text-white" />
+                  <item.icon className="w-5 h-5 text-white" />
                 </a>
               ))}
             </div>

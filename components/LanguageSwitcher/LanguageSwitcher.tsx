@@ -54,15 +54,15 @@ function LangButton({
     if (variant === "mobile") {
       return `flex items-center justify-center w-12 h-10 md:w-14 md:h-11 rounded-md border transition-all ${
         isActive
-          ? "bg-white border-white cursor-default"
-          : "border-white/50 hover:bg-white/10"
+          ? "bg-brand/10 border-brand cursor-default"
+          : "border-slate-200 hover:bg-slate-50"
       }`;
     }
-    
+
     return `flex items-center justify-center w-12 h-10 md:w-14 md:h-11 rounded-md border transition-all ${
       isActive
-        ? "bg-[#0055ff] border-[#0055ff] cursor-default pointer-events-none"
-        : "border-gray-200 hover:bg-gray-100"
+        ? "bg-brand border-brand cursor-default pointer-events-none"
+        : "border-slate-200 hover:bg-slate-50"
     }`;
   };
 

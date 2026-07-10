@@ -1,6 +1,7 @@
 import TestimonialsCarouselClient from "./TestimonialsCarouselClient";
 
 export type TestimonialsTranslations = {
+  eyebrow: string;
   title: string;
   titleHighlight: string;
   role: string;
@@ -48,10 +49,13 @@ export default function Testimonials({ t }: { t: TestimonialsTranslations }) {
   ];
 
   return (
-    <section id="testimonials" className="pt-16 pb-16">
-      <h2 className="text-center text-2xl md:text-4xl xl:text-5xl font-bold text-slate-900">
-        {t.title} <span className="text-[#0055ff]">{t.titleHighlight}</span>
-      </h2>
+    <section id="testimonials" className="py-20 sm:py-28">
+      <div className="section-container flex flex-col items-center">
+        <span className="section-eyebrow">{t.eyebrow}</span>
+        <h2 className="mt-4 text-center section-heading">
+          {t.title} <span className="text-brand">{t.titleHighlight}</span>
+        </h2>
+      </div>
 
       <TestimonialsCarouselClient items={testimonialsList} />
     </section>

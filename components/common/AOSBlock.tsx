@@ -8,10 +8,12 @@ export default function AOSBlock({
   children,
   animation = "fade-up",
   delay = 0,
+  className,
 }: {
   children: React.ReactNode;
   animation?: string;
   delay?: number;
+  className?: string;
 }) {
   useEffect(() => {
     AOS.init({
@@ -23,7 +25,7 @@ export default function AOSBlock({
   }, []);
 
   return (
-    <div data-aos={animation} data-aos-delay={delay}>
+    <div data-aos={animation} data-aos-delay={delay} className={className}>
       {children}
     </div>
   );

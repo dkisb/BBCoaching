@@ -6,6 +6,7 @@ import { PiPhone } from "react-icons/pi";
 import { HiBars3BottomRight } from "react-icons/hi2";
 import { useTranslations } from "next-intl";
 import LanguageSwitcher from "@/components/LanguageSwitcher/LanguageSwitcher";
+import { Button } from "@/components/ui/button";
 import { smoothScrollTo } from "@/helper";
 
 type Props = {
@@ -19,11 +20,10 @@ export default function Navbar({ openNav }: Props) {
   const navLinks = [
     { id: 1, url: "#home", label: t("home") },
     { id: 2, url: "#about", label: t("about") },
-    { id: 3, url: "#experiences", label: t("experiences") },
-    { id: 4, url: "#services", label: t("services") },
-    { id: 5, url: "#testimonials", label: t("testimonials") },
-    { id: 6, url: "#gallery", label: t("gallery") },
-    { id: 7, url: "#contact", label: t("contact") },
+    { id: 3, url: "#services", label: t("services") },
+    { id: 4, url: "#testimonials", label: t("testimonials") },
+    { id: 5, url: "#gallery", label: t("gallery") },
+    { id: 6, url: "#contact", label: t("contact") },
   ];
 
   useEffect(() => {
@@ -36,10 +36,10 @@ export default function Navbar({ openNav }: Props) {
   return (
     <header
       className={`transition-all ${
-        navBg ? "bg-white/90 shadow-md" : "bg-white backdrop-blur"
+        navBg ? "bg-white/90 backdrop-blur shadow-sm border-b border-slate-200" : "bg-white"
       } duration-200 h-[12vh] z-[10000] fixed w-full`}
     >
-      <div className="flex items-center h-full justify-between w-90% mx-auto">
+      <div className="section-container flex items-center h-full justify-between">
         <div className="flex items-center space-x-2">
           <a
             href="#home"
@@ -47,7 +47,7 @@ export default function Navbar({ openNav }: Props) {
               e.preventDefault();
               smoothScrollTo("home", { offset: -100 });
             }}
-            className="flex items-center justify-center flex-col w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 lg:w-45 lg:h-45"
+            className="flex items-center justify-center flex-col w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24"
             aria-label="Go to home"
           >
             <Image
@@ -71,7 +71,7 @@ export default function Navbar({ openNav }: Props) {
                     e.preventDefault();
                     smoothScrollTo(link.url.slice(1), { offset: -100, duration: 600 });
                   }}
-                  className="text-base hover:text-cyan-500 text-black font-medium transition-all duration-200"
+                  className="text-sm text-slate-700 hover:text-brand font-medium transition-colors duration-200"
                 >
                   {link.label}
                 </a>
@@ -80,26 +80,29 @@ export default function Navbar({ openNav }: Props) {
           </ul>
         </nav>
 
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-3 sm:space-x-4">
           <div className="hidden lg:block">
             <LanguageSwitcher />
           </div>
-          <a
-            href="#contact"
-            onClick={(e) => {
-              e.preventDefault();
-              smoothScrollTo("contact", { offset: -100, duration: 600 });
-            }}
-            className="inline-block"
+          <Button
+            asChild
+            size="lg"
+            className="rounded-lg bg-brand text-brand-foreground hover:bg-brand/90 px-4 sm:px-6"
           >
-            <button className="px-4 py-2 sm:px-6 sm:py-2.5 text-xs sm:text-sm cursor-pointer rounded-lg bg-[#0055ff] hover:bg-blue-900 transition-all duration-300 text-white flex items-center space-x-2">
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                smoothScrollTo("contact", { offset: -100, duration: 600 });
+              }}
+            >
               <PiPhone className="w-4 h-4 sm:w-5 sm:h-5" />
-              <span className="whitespace-nowrap">{t("bookCall")}</span>
-            </button>
-          </a>
+              <span className="whitespace-nowrap text-xs sm:text-sm">{t("bookCall")}</span>
+            </a>
+          </Button>
 
-          <button onClick={openNav} className="lg:hidden" aria-label="Open menu" type="button">
-            <HiBars3BottomRight className="w-8 h-8 text-black" />
+          <button onClick={openNav} className="lg:hidden text-slate-900" aria-label="Open menu" type="button">
+            <HiBars3BottomRight className="w-7 h-7" />
           </button>
         </div>
       </div>

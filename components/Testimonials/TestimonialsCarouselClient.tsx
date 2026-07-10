@@ -15,7 +15,7 @@ export default function TestimonialsCarouselClient({
   items: Testimonial[];
 }) {
   return (
-    <div className="mt-12 w-[90%] md:w-[85%] lg:w-[78%] mx-auto">
+    <div className="mt-14 section-container">
       <Carousel opts={{ align: "start", loop: true }} className="w-full">
         <CarouselContent>
           {items.map((t, idx) => (
@@ -30,8 +30,8 @@ export default function TestimonialsCarouselClient({
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="-left-5 top-1/2 -translate-y-1/2 bg-white text-black hover:bg-white/90" />
-        <CarouselNext className="-right-5 top-1/2 -translate-y-1/2 bg-white text-black hover:bg-white/90" />
+        <CarouselPrevious className="-left-5 top-1/2 -translate-y-1/2 bg-white border border-slate-200 text-slate-900 hover:bg-slate-50" />
+        <CarouselNext className="-right-5 top-1/2 -translate-y-1/2 bg-white border border-slate-200 text-slate-900 hover:bg-slate-50" />
       </Carousel>
     </div>
   );
