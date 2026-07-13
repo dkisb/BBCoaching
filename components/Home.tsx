@@ -19,7 +19,7 @@ export default function Home({
     <>
       <div id="home" className="overflow-hidden bg-white">
         <div className="bg-gradient-to-b from-blue-50/70 via-white to-white">
-          <Hero t={t.hero} />
+          <Hero t={t.hero} skills={t.skills} />
         </div>
         <Separator className="bg-slate-200" />
 
@@ -32,7 +32,7 @@ export default function Home({
         <Separator className="bg-slate-200" />
 
         <div className="bg-gradient-to-b from-blue-50/60 via-blue-50/20 to-white">
-          <Services t={t.services} skills={t.skills} />
+          <Services t={t.services} />
         </div>
         <Separator className="bg-slate-200" />
 

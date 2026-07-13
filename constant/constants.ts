@@ -58,7 +58,7 @@ export const ServicesList = [
     {
         id: 4,
         name: "Mental Training",
-        description: "Racing isn’t just physical — it’s mental too. I’ll share tools and techniques that have helped me (and other drivers) stay focused, manage pressure, and keep a clear head when it matters most.",
+        description: "Racing isn’t just physical - it’s mental too. I’ll share tools and techniques that have helped me (and other drivers) stay focused, manage pressure, and keep a clear head when it matters most.",
         icon:FaBrain,
     },
     

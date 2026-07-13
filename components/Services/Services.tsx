@@ -1,8 +1,7 @@
 import ServiceCard from "./ServiceCard";
 import AOSBlock from "../common/AOSBlock";
 import { IconType } from "react-icons";
-import { FaChartLine, FaCar, FaBrain, FaTv, FaGraduationCap } from "react-icons/fa";
-import { LuChartNoAxesCombined } from "react-icons/lu";
+import { FaChartLine, FaCar, FaBrain } from "react-icons/fa";
 
 export type ServicesTranslations = {
   eyebrow: string;
@@ -14,13 +13,6 @@ export type ServicesTranslations = {
   mentalTraining: { name: string; description: string };
 };
 
-export type SkillsTranslations = {
-  performanceAnalysis: string;
-  vehicleSetup: string;
-  dataVideoAnalysis: string;
-  driverDevelopment: string;
-};
-
 type ServiceItem = {
   id: number;
   icon: IconType;
@@ -28,19 +20,7 @@ type ServiceItem = {
   description: string;
 };
 
-type SkillItem = {
-  id: number;
-  icon: IconType;
-  name: string;
-};
-
-export default function Services({
-  t,
-  skills,
-}: {
-  t: ServicesTranslations;
-  skills: SkillsTranslations;
-}) {
+export default function Services({ t }: { t: ServicesTranslations }) {
   const servicesList: ServiceItem[] = [
     {
       id: 1,
@@ -62,13 +42,6 @@ export default function Services({
     },
   ];
 
-  const skillsList: SkillItem[] = [
-    { id: 1, icon: LuChartNoAxesCombined, name: skills.performanceAnalysis },
-    { id: 2, icon: FaCar, name: skills.vehicleSetup },
-    { id: 3, icon: FaTv, name: skills.dataVideoAnalysis },
-    { id: 4, icon: FaGraduationCap, name: skills.driverDevelopment },
-  ];
-
   return (
     <section id="services" className="py-20 sm:py-28">
       <div className="section-container flex flex-col items-center">
@@ -83,18 +56,6 @@ export default function Services({
             <AOSBlock key={service.id} animation="fade-up" delay={i * 100} className="h-full">
               <ServiceCard Icon={service.icon} name={service.name} description={service.description} />
             </AOSBlock>
-          ))}
-        </div>
-
-        <div className="mt-10 flex flex-wrap justify-center gap-3">
-          {skillsList.map((skill) => (
-            <span
-              key={skill.id}
-              className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700"
-            >
-              <skill.icon className="w-4 h-4 text-brand" aria-hidden="true" />
-              {skill.name}
-            </span>
           ))}
         </div>
       </div>

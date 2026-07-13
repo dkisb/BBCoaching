@@ -6,7 +6,7 @@ const intlMiddleware = createMiddleware(routing)
 const isLocale = (value: string | undefined): value is AppLocale =>
   routing.locales.includes(value as AppLocale)
 
-export default function middleware(request: NextRequest) {
+export default function proxy(request: NextRequest) {
   const segments = request.nextUrl.pathname.split('/').filter(Boolean)
 
   if (segments.length > 1) {

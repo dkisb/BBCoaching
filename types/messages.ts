@@ -1,8 +1,8 @@
 // types/messages.ts
-import type { HeroTranslations } from "@/components/Hero/Hero";
+import type { HeroTranslations, SkillsTranslations } from "@/components/Hero/Hero";
 import type { AboutTranslations } from "@/components/About/About";
 import type { ResumeTranslations } from "@/components/Resume/Resume";
-import type { ServicesTranslations, SkillsTranslations } from "@/components/Services/Services";
+import type { ServicesTranslations } from "@/components/Services/Services";
 import type { TestimonialsTranslations } from "@/components/Testimonials/Testimonials";
 import type { GalleryTranslations } from "@/components/Gallery/Gallery";
 import type { ContactTranslations } from "@/components/Contact/Contact";
