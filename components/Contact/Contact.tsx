@@ -21,8 +21,8 @@ export type ContactTranslations = {
     errorRequired: string;
     errorInvalidEmail: string;
     errorGeneric: string;
-    trustNote: string;
   };
+  trustNote: string;
 };
 
 export default function Contact({ t }: { t: ContactTranslations }) {
@@ -80,7 +80,7 @@ export default function Contact({ t }: { t: ContactTranslations }) {
         </div>
 
         {/* form (client for interactivity + AOS) */}
-        <ContactFormClient t={t.form} />
+        <ContactFormClient t={{ ...t.form, trustNote: t.trustNote }} />
       </div>
     </section>
   );

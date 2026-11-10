@@ -148,3 +148,14 @@ html {
     @apply bg-white border border-slate-200 rounded-2xl shadow-sm transition-shadow hover:shadow-md;
   }
 }
+/* Respect reduced-motion: no smooth scrolling and AOS content shown immediately. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

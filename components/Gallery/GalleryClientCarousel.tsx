@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Maximize2 } from "lucide-react";
 import {
@@ -25,11 +25,33 @@ export default function GalleryCarouselClient({
 }) {
   const [lightboxApi, setLightboxApi] = useState<CarouselApi>();
   const [isOpen, setIsOpen] = useState(false);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLElement | null>(null);
 
   const openAt = (index: number) => {
+    triggerRef.current = document.activeElement as HTMLElement | null;
     setIsOpen(true);
-    lightboxApi?.scrollTo(index);
+    lightboxApi?.scrollTo(index, true);
   };
+
+  // Escape closes; focus moves into the dialog and returns to the trigger on close.
+  useEffect(() => {
+    if (!isOpen) return;
+    closeButtonRef.current?.focus();
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsOpen(false);
+        return;
+      }
+      if (e.key === "Tab") trapFocus(e, dialogRef.current);
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      triggerRef.current?.focus();
+    };
+  }, [isOpen]);
 
   return (
     <>
@@ -53,7 +75,6 @@ export default function GalleryCarouselClient({
                       style={{ objectFit: "cover" }}
                       className="transition-transform duration-300 group-hover:scale-105"
                       sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw"
-                      priority={i === 0}
                     />
                     <div className="absolute inset-0 bg-slate-950/0 group-hover:bg-slate-950/30 transition-colors duration-300 flex items-center justify-center">
                       <span className="w-11 h-11 rounded-full bg-white/90 flex items-center justify-center opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300">
@@ -77,13 +98,16 @@ export default function GalleryCarouselClient({
         onClick={() => setIsOpen(false)}
         role="dialog"
         aria-modal="true"
-        aria-hidden={!isOpen}
+        aria-label="Gallery"
+        ref={dialogRef}
+        inert={!isOpen}
       >
         <div
           className="relative w-[90vw] max-w-3xl"
           onClick={(e: React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}
         >
           <button
+            ref={closeButtonRef}
             className="absolute -top-12 right-0 text-white text-3xl font-bold bg-black/50 rounded-full w-10 h-10 flex items-center justify-center hover:bg-black/80 transition z-10"
             onClick={() => setIsOpen(false)}
             aria-label="Close"
@@ -97,7 +121,13 @@ export default function GalleryCarouselClient({
               {items.map((g) => (
                 <CarouselItem key={g.id}>
                   <div className="relative w-full h-[70vh]">
-                    <Image src={g.image} alt={g.alt} fill style={{ objectFit: "contain" }} />
+                    <Image
+                      src={g.image}
+                      alt={g.alt}
+                      fill
+                      sizes="(max-width: 768px) 90vw, 768px"
+                      style={{ objectFit: "contain" }}
+                    />
                   </div>
                 </CarouselItem>
               ))}
@@ -109,4 +139,24 @@ export default function GalleryCarouselClient({
       </div>
     </>
   );
+}
+
+// Keep Tab / Shift+Tab cycling inside the open dialog.
+function trapFocus(e: KeyboardEvent, container: HTMLElement | null) {
+  if (!container) return;
+  const focusable = Array.from(
+    container.querySelectorAll<HTMLElement>("button:not([disabled]), [href], [tabindex]:not([tabindex='-1'])")
+  );
+  if (focusable.length === 0) return;
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+  const active = document.activeElement;
+  const isOutside = !container.contains(active);
+  if (e.shiftKey && (active === first || isOutside)) {
+    e.preventDefault();
+    last.focus();
+  } else if (!e.shiftKey && (active === last || isOutside)) {
+    e.preventDefault();
+    first.focus();
+  }
 }

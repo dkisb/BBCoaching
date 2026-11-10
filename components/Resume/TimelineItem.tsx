@@ -26,7 +26,7 @@ export default function TimelineItem({
   isLast = false,
 }: TimelineItemProps) {
   return (
-    <div className="relative pl-12 pb-6 last:pb-0">
+    <div className={cn("relative pl-12", isLast ? "pb-0" : "pb-6")}>
       {!isLast ? (
         <span className="absolute left-4 top-8 bottom-0 w-px bg-slate-200" aria-hidden="true" />
       ) : null}
