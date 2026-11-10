@@ -63,17 +63,16 @@ export default function ContactFormClient({ t }: { t: FormT }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, phone, message }),
       });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data?.error || t.errorGeneric);
+      if (!res.ok) throw new Error(`Contact request failed with ${res.status}`);
 
       setSuccess(true);
       setName("");
       setEmail("");
       setPhone("");
       setMessage("");
-    } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : t.errorGeneric;
-      setErrorMsg(msg);
+    } catch {
+      // Server errors are logged server-side; show the localized message to the visitor.
+      setErrorMsg(t.errorGeneric);
     } finally {
       setLoading(false);
     }

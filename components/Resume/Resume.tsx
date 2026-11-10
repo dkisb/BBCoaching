@@ -116,7 +116,8 @@ export default function Resume({ t }: { t: ResumeTranslations }) {
     },
   ];
 
-  const visibleTimeline = expanded ? timeline : timeline.slice(0, VISIBLE_COUNT);
+  // Every entry stays in the HTML so crawlers see all credentials; extras are only visually collapsed.
+  const lastVisibleIndex = expanded ? timeline.length - 1 : Math.min(VISIBLE_COUNT, timeline.length) - 1;
 
   return (
     <div>
@@ -128,12 +129,10 @@ export default function Resume({ t }: { t: ResumeTranslations }) {
       <div className="mt-14">
         <AOSBlock animation="fade-up" delay={100}>
           <div>
-            {visibleTimeline.map((item, idx) => (
-              <TimelineItem
-                key={`${item.role}-${idx}`}
-                {...item}
-                isLast={idx === visibleTimeline.length - 1}
-              />
+            {timeline.map((item, idx) => (
+              <div key={`${item.role}-${idx}`} className={idx > lastVisibleIndex ? "hidden" : undefined}>
+                <TimelineItem {...item} isLast={idx === lastVisibleIndex} />
+              </div>
             ))}
           </div>
         </AOSBlock>
@@ -142,6 +141,7 @@ export default function Resume({ t }: { t: ResumeTranslations }) {
           <button
             type="button"
             onClick={() => setExpanded((prev) => !prev)}
+            aria-expanded={expanded}
             className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-brand"
           >
             {expanded ? t.showLess : t.showMore}

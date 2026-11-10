@@ -1,28 +1,45 @@
 import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
 
+const MAX_LENGTH = { name: 100, email: 254, phone: 40, message: 5000 } as const
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+type ContactInput = { name: string; email: string; phone: string; message: string }
+
+function parseContact(body: unknown): ContactInput | null {
+  if (typeof body !== 'object' || body === null) return null
+  const raw = body as Record<string, unknown>
+  const field = (key: keyof ContactInput) => (typeof raw[key] === 'string' ? raw[key].trim() : '')
+  const input = { name: field('name'), email: field('email'), phone: field('phone'), message: field('message') }
+
+  if (!input.name || !input.email || !input.message) return null
+  if (!EMAIL_PATTERN.test(input.email)) return null
+  const tooLong = (Object.keys(MAX_LENGTH) as (keyof ContactInput)[]).some(
+    (key) => input[key].length > MAX_LENGTH[key]
+  )
+  return tooLong ? null : input
+}
+
 export async function POST(req: Request) {
   try {
-    const { name, email, phone, message } = await req.json()
-
-    if (!name || !email || !message) {
-      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
+    const input = parseContact(await req.json())
+    if (!input) {
+      return NextResponse.json({ error: 'Invalid request' }, { status: 400 })
     }
+    const { name, email, phone, message } = input
 
     const resendApiKey = process.env.RESEND_API_KEY
     const toEmail = process.env.CONTACT_TO_EMAIL
     const fromEmail = process.env.CONTACT_FROM_EMAIL || 'onboarding@resend.dev'
 
-    if (!resendApiKey) {
-      return NextResponse.json({ error: 'Missing RESEND_API_KEY' }, { status: 500 })
-    }
-    if (!toEmail) {
-      return NextResponse.json({ error: 'Missing CONTACT_TO_EMAIL' }, { status: 500 })
+    if (!resendApiKey || !toEmail) {
+      console.error('[contact] Missing RESEND_API_KEY or CONTACT_TO_EMAIL')
+      return NextResponse.json({ error: 'Failed to send' }, { status: 500 })
     }
 
     const resend = new Resend(resendApiKey)
 
-    const subject = `New contact form submission from ${name}`
+    const subject = `New contact form submission from ${name.replace(/[\r\n]+/g, ' ')}`
 
     const html = `
       <div style="font-family:Inter,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6;color:#0f172a">
@@ -44,7 +61,8 @@ export async function POST(req: Request) {
     })
 
     if (error) {
-      return NextResponse.json({ error: error.message || 'Failed to send' }, { status: 500 })
+      console.error('[contact] Resend error', error)
+      return NextResponse.json({ error: 'Failed to send' }, { status: 500 })
     }
 
     return NextResponse.json({ ok: true })

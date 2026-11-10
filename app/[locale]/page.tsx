@@ -8,10 +8,6 @@ import type { Messages } from "@/types/messages";
 
 export const revalidate = 3600; // ISR: regenerate up to once per hour
 
-// TODO: set your real domain and absolute logo URL
-const SITE_URL = "https://bertoldbors.com";
-const LOGO_URL = "https://bertoldbors.com/images/logoDark.png";
-
 export default async function HomePage({
   params,
 }: {
@@ -26,29 +22,7 @@ export default async function HomePage({
 
   return (
     <>
-      <AllSchema
-        locale={locale}
-        t={messages}
-        siteUrl={SITE_URL}
-        logoUrl={LOGO_URL}
-        social={[
-          "https://www.instagram.com/borsberti/",
-          "https://www.facebook.com/robinagyker/",
-          "https://www.tiktok.com/robinagyker/",
-          "https://www.linkedin.com/in/döme-marcell-kisbalázs",
-        ]}
-        person={{
-          name: "Bertold Bors",
-          jobTitle: "Motorsport Performance Analyst & Driver Coach",
-          imageUrl: "https://bertoldbors.com/images/bertold-bors.jpg",
-        }}
-        address={{
-          streetAddress: "",
-          addressLocality: "Budapest",
-          addressCountry: "HU",
-          postalCode: "",
-        }}
-      />
+      <AllSchema locale={locale} t={messages} />
       <Home t={messages} />
     </>
   );

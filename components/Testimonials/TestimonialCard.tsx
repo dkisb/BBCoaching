@@ -1,6 +1,7 @@
 // components/Testimonials/TestimonialCard.tsx
-import { Star, Quote } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import Image from "next/image";
+import { Quote } from "lucide-react";
+import { Avatar } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export type Testimonial = {
@@ -18,13 +19,6 @@ export default function TestimonialCard({
   description,
   imageAlt,
 }: Testimonial) {
-  const fallback = name
-    .split(" ")
-    .map((part) => part[0])
-    .join("")
-    .slice(0, 2)
-    .toUpperCase();
-
   return (
     <Card
       size="sm"
@@ -35,8 +29,13 @@ export default function TestimonialCard({
         <div className="flex items-start justify-between">
           <div className="flex items-center gap-3">
             <Avatar className="size-12 sm:size-14 ring-2 ring-brand/10">
-              <AvatarImage src={image} alt={imageAlt ?? name} className="object-cover object-top" />
-              <AvatarFallback>{fallback}</AvatarFallback>
+              <Image
+                src={image}
+                alt={imageAlt ?? name}
+                fill
+                sizes="56px"
+                className="rounded-full object-cover object-top"
+              />
             </Avatar>
             <div>
               <CardTitle className="text-slate-950 text-base sm:text-lg leading-tight">{name}</CardTitle>
@@ -44,11 +43,6 @@ export default function TestimonialCard({
             </div>
           </div>
           <Quote className="w-6 h-6 text-brand/20 shrink-0" aria-hidden="true" />
-        </div>
-        <div className="flex gap-0.5 mt-2" aria-label="5 out of 5 stars">
-          {Array.from({ length: 5 }).map((_, i) => (
-            <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-          ))}
         </div>
       </CardHeader>
       <CardContent className="flex-1 min-h-0">

@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Link } from "react-scroll";
+import { smoothScrollTo } from "@/helper";
 import { Button } from "@/components/ui/button";
 
 type Props = {
@@ -27,9 +27,15 @@ export default function AboutClient({ ctaText }: Props) {
         size="lg"
         className="mt-8 rounded-lg bg-brand text-brand-foreground hover:bg-brand/90 h-12 px-8 text-base"
       >
-        <Link to="contact" smooth={true} duration={800} offset={-100} className="cursor-pointer">
+        <a
+          href="#contact"
+          onClick={(e) => {
+            e.preventDefault();
+            smoothScrollTo("contact", { offset: -100, duration: 800 });
+          }}
+        >
           {ctaText}
-        </Link>
+        </a>
       </Button>
     </div>
   );

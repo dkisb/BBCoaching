@@ -9,9 +9,7 @@ import { routing } from "@/i18n/routing";
 import "../globals.css";
 import ResponsiveNav from "@/components/Navbar/ResponsiveNav";
 import Footer from "@/components/Footer/Footer";
-
-// Adjust to your real domain
-const siteUrl = "https://bertoldbors.com";
+import { SITE_NAME, SITE_URL, localeAlternates, localeUrl } from "@/lib/site";
 
 const font = Inter({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -36,35 +34,29 @@ export async function generateMetadata({
     messages?.metadata?.description ??
     "BB Coaching Professional Motorsport Coaching by Bertold Bors";
 
-  // Build per-locale URLs
-  const url = `${siteUrl}/${locale}`;
+  const url = localeUrl(locale);
 
-  // Build alternates map for hreflang
-  const languages: Record<string, string> = {};
-  for (const l of routing.locales) {
-    languages[l] = `${siteUrl}/${l}`;
-  }
-
+  // OG/Twitter images come from the opengraph-image.tsx file convention.
   return {
     title,
     description,
-    metadataBase: new URL(siteUrl),
+    metadataBase: new URL(SITE_URL),
     alternates: {
       canonical: url,
-      languages,
+      languages: localeAlternates(),
     },
     openGraph: {
       type: "website",
       url,
+      siteName: SITE_NAME,
+      locale: locale === "hu" ? "hu_HU" : "en_US",
       title,
       description,
-      images: [{ url: "/og.png", width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: ["/og.png"],
     },
   };
 }

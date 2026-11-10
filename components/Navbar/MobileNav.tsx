@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { CgClose } from "react-icons/cg";
 import { PiPhone } from "react-icons/pi";
 import { useTranslations } from "next-intl";
@@ -27,6 +27,15 @@ export default function MobileNav({ showNav, closeNav }: Props) {
 
   const navOpen = showNav ? "translate-x-0" : "translate-x-[100%]";
 
+  useEffect(() => {
+    if (!showNav) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeNav();
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [showNav, closeNav]);
+
   return (
     <div>
       <div
@@ -39,6 +48,7 @@ export default function MobileNav({ showNav, closeNav }: Props) {
         className={`${navOpen} fixed justify-center flex flex-col h-full transform transition-all duration-500 delay-300 w-[80%] sm:w-[60%] bg-white shadow-2xl space-y-6 z-[100005] right-0`}
         role="dialog"
         aria-modal="true"
+        inert={!showNav}
       >
         <button
           onClick={closeNav}
